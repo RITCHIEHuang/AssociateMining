@@ -83,8 +83,9 @@ def apriori_frequent_items(df, items, item_counts, min_sup=0.05, debug=False):
         hash_sets[k] = cur_hash_sets
         hash_k_sets = cur_hash_sets
 
-    print("Final frequent item sets")
-    print("=" * 100)
-    pprint.pprint(frequent_sets)
-    print("=" * 100)
+    if debug:
+        print("Final frequent item sets")
+        print("=" * 100)
+        pprint.pprint(frequent_sets)
+        print("=" * 100)
     return frequent_sets

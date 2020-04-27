@@ -1,6 +1,8 @@
 #!/usr/bin/env python
 # Created at 2020/4/27
 import math
+from collections import defaultdict
+
 from data_process import read_dummy_data
 
 
@@ -157,12 +159,17 @@ def fp_growth_frequent_items(df, min_sup=0.3):
     # recursively do the following step: caculate Conditional pattern-base and Conditional pattern-tree
     fre_item_set = []
     fre_item_count = {}
-    mining_fp_tree(header_table, min_threshold, set([]), fre_item_set, fre_item_count )
-    return fre_item_set, fre_item_count
+    mining_fp_tree(header_table, min_threshold, set([]), fre_item_set, fre_item_count)
+
+    fre_item_sets = defaultdict(list)
+    for k, v in fre_item_count.items():
+        fre_item_sets[len(k)].append((tuple(k), v))
+    return fre_item_set, fre_item_count, fre_item_sets
 
 
 if __name__ == '__main__':
     df, * _ = read_dummy_data()
-    frequent_item_set, frequent_set_count = fp_growth_frequent_items(df=df, min_sup=0.21)
+    frequent_item_set, frequent_set_count, frequent_item_sets = fp_growth_frequent_items(df=df, min_sup=0.21)
     print(frequent_set_count)
     print(frequent_item_set)
+    print(frequent_item_sets)

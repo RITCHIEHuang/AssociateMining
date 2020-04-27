@@ -49,12 +49,12 @@ def test(output_dir="./result/"):
     ###########################################
     #  Fp-growth algorithm
     ###########################################
-    # fp_frequent_item_sets, _ = fp_growth_frequent_items(df=df, min_sup=0.21)
-    # write_frequent_item_set_to_file(fp_frequent_item_sets,
-    #                                 file_path=f"{output_dir}ap/frequent_set/sup_{min_support}_conf_{min_confidence}.txt")
-    # fp_strong_rules = generate_strong_rule(min_confidence, df, fp_frequent_item_sets)
-    # write_rule_to_file(fp_strong_rules,
-    #                    file_path=f"{output_dir}fp/rule/sup_{min_support}_conf_{min_confidence}.txt")
+    *_, fp_frequent_item_sets = fp_growth_frequent_items(df=df, min_sup=0.21)
+    write_frequent_item_set_to_file(fp_frequent_item_sets,
+                                    file_path=f"{output_dir}fp/frequent_set/sup_{min_support}_conf_{min_confidence}.txt")
+    fp_strong_rules = generate_strong_rule(min_confidence, df, fp_frequent_item_sets)
+    write_rule_to_file(fp_strong_rules,
+                       file_path=f"{output_dir}fp/rule/sup_{min_support}_conf_{min_confidence}.txt")
 
 
 def write_frequent_item_set_to_file(frequent_set, file_path):
@@ -75,7 +75,7 @@ def write_frequent_item_set_to_file(frequent_set, file_path):
 def write_rule_to_file(rule_set, file_path):
     dir = os.path.dirname(file_path)
     if not os.path.exists(dir):
-        os.mkdir(dir)
+        os.makedirs(dir)
 
     with open(file_path, "w+") as f:
         f.write(f"Find {len(rule_set)} rules !!!" + os.linesep)
@@ -143,14 +143,14 @@ def main(output_dir="./result/"):
                                    file_path=f"{output_dir}ap/rule/sup_{min_sup}_conf_{min_conf}.txt")
 
                 ###########################################
-                #  TODO Fp-growth algorithm
+                #  Fp-growth algorithm
                 ###########################################
                 time_start = time.time()
-                fp_frequent_item_sets, _ = fp_growth_frequent_items(df=df, min_sup=0.21)
+                *_, fp_frequent_item_sets = fp_growth_frequent_items(df=df, min_sup=0.21)
                 fp_time_cost = time.time() - time_start
                 print(f"Fp-growth spent {fp_time_cost} s for mining frequent item sets.")
                 write_frequent_item_set_to_file(fp_frequent_item_sets,
-                                                file_path=f"{output_dir}ap/frequent_set/sup_{min_sup}_conf_{min_conf}.txt")
+                                                file_path=f"{output_dir}fp/frequent_set/sup_{min_sup}_conf_{min_conf}.txt")
                 fp_strong_rules = generate_strong_rule(min_conf, df, fp_frequent_item_sets)
                 write_rule_to_file(fp_strong_rules,
                                    file_path=f"{output_dir}fp/rule/sup_{min_sup}_conf_{min_conf}.txt")

@@ -1,17 +1,17 @@
 Find 16 rules !!!
-I3===>I1, confidence: 0.6666666666666666
-I1===>I2, confidence: 0.6666666666666666
+I1===>I3, confidence: 0.5
+I1===>I2, confidence: 0.5
 I5===>I1, confidence: 1.0
 I2===>I1, confidence: 1.0
-I2===>I1, confidence: 0.5714285714285714
-I4===>I2, confidence: 1.0
-I2===>I1, confidence: 0.5
 I2===>I3, confidence: 0.5714285714285714
-I1===>I2, confidence: 1.0
 I5===>I1, confidence: 1.0
+I1===>I2, confidence: 1.0
 I5===>I2, confidence: 1.0
-I3===>I2, confidence: 0.6666666666666666
-I1===>I3, confidence: 0.5
+I2===>I1, confidence: 0.5
+I4===>I2, confidence: 1.0
+I3===>I1, confidence: 0.6666666666666666
 I1===>I5, confidence: 0.5
+I2===>I1, confidence: 0.5714285714285714
+I3===>I2, confidence: 0.6666666666666666
+I1===>I2, confidence: 0.6666666666666666
 I1===>I3, confidence: 0.6666666666666666
-I1===>I2, confidence: 0.5

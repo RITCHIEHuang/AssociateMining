@@ -161,6 +161,8 @@ def main(output_dir="./result/"):
                      "algo": "Apriori",
                      "time": ap_time_cost}),
                     ignore_index=True)
+                experiment_id = experiment_id + 1
+                print("=" * 150)
 
             ###########################################
             #  Fp-growth algorithm
@@ -174,9 +176,6 @@ def main(output_dir="./result/"):
             # fp_strong_rules = generate_strong_rule(min_conf, df, fp_frequent_item_sets)
             # write_rule_to_file(fp_strong_rules,
             #                    file_path=f"{output_dir}fp/rule/sup_{min_sup}_conf_{min_conf}.txt")
-
-            experiment_id = experiment_id + 1
-            print("=" * 150)
 
     record_df.to_csv("record.csv")
 

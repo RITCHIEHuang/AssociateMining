@@ -1,0 +1,20 @@
+Find 13 frequent item sets !!!
+Including 5 1-item frequent set
+I3, support: 6
+I4, support: 2
+I5, support: 2
+I1, support: 6
+I2, support: 7
+
+Including 6 2-item frequent set
+I2, I4, support: 2
+I2, I3, support: 4
+I1, I3, support: 4
+I1, I5, support: 2
+I1, I2, support: 4
+I2, I5, support: 2
+
+Including 2 3-item frequent set
+I1, I2, I5, support: 2
+I1, I2, I3, support: 2
+

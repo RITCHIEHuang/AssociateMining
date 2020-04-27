@@ -10,6 +10,7 @@ import pandas as pd
 from apriori.apriori import apriori_frequent_items
 from brute_force.brute_force import bf_frequent_items
 from data_process import read_grocery_data, read_dummy_data, read_unix_commands_data
+from fp_growth.fp_growth import fp_growth_frequent_items
 from gen_strong_rule import generate_strong_rule
 
 GROCERY_STORE_DATA_PATH = "./dataset/GroceryStore/Groceries.csv"
@@ -48,12 +49,18 @@ def test(output_dir="./result/"):
     ###########################################
     #  Fp-growth algorithm
     ###########################################
+    # fp_frequent_item_sets, _ = fp_growth_frequent_items(df=df, min_sup=0.21)
+    # write_frequent_item_set_to_file(fp_frequent_item_sets,
+    #                                 file_path=f"{output_dir}ap/frequent_set/sup_{min_support}_conf_{min_confidence}.txt")
+    # fp_strong_rules = generate_strong_rule(min_confidence, df, fp_frequent_item_sets)
+    # write_rule_to_file(fp_strong_rules,
+    #                    file_path=f"{output_dir}fp/rule/sup_{min_support}_conf_{min_confidence}.txt")
 
 
 def write_frequent_item_set_to_file(frequent_set, file_path):
     dir = os.path.dirname(file_path)
     if not os.path.exists(dir):
-        os.mkdir(dir)
+        os.makedirs(dir)
     with open(file_path, "w+") as f:
         frequent_item_set_count = sum(map(lambda a: len(a), frequent_set.values()))
         f.write(f"Find {frequent_item_set_count} frequent item sets !!!" + os.linesep)
@@ -138,11 +145,21 @@ def main(output_dir="./result/"):
                 ###########################################
                 #  TODO Fp-growth algorithm
                 ###########################################
+                time_start = time.time()
+                fp_frequent_item_sets, _ = fp_growth_frequent_items(df=df, min_sup=0.21)
+                fp_time_cost = time.time() - time_start
+                print(f"Fp-growth spent {fp_time_cost} s for mining frequent item sets.")
+                write_frequent_item_set_to_file(fp_frequent_item_sets,
+                                                file_path=f"{output_dir}ap/frequent_set/sup_{min_sup}_conf_{min_conf}.txt")
+                fp_strong_rules = generate_strong_rule(min_conf, df, fp_frequent_item_sets)
+                write_rule_to_file(fp_strong_rules,
+                                   file_path=f"{output_dir}fp/rule/sup_{min_sup}_conf_{min_conf}.txt")
 
                 record_df = record_df.append(pd.Series(
                     {"min_sup": min_sup, "min_conf": min_conf, "data_set": data_set, "num_items": item_counts,
                      "num_transactions": df.shape[0],
-                     "brute_force": bf_time_cost, "apriori": ap_time_cost}), ignore_index=True)
+                     "brute_force": bf_time_cost, "apriori": ap_time_cost, "fp_growth": fp_time_cost}),
+                    ignore_index=True)
 
                 experiment_id = experiment_id + 1
                 print("=" * 150)
@@ -151,4 +168,4 @@ def main(output_dir="./result/"):
 
 
 if __name__ == '__main__':
-    main(output_dir="./result/")
+    test(output_dir="./result/")

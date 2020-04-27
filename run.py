@@ -90,8 +90,11 @@ def main(output_dir="./result/"):
         os.mkdir(output_dir)
 
     """parameters"""
-    min_sups = np.linspace(0.0001, 0.05, 20)
-    min_confs = np.linspace(0.2, 0.8, 20)
+    # min_sups = np.linspace(0.0001, 0.05, 20)
+    # min_confs = np.linspace(0.2, 0.8, 20)
+
+    min_sups = [0.0005, 0.001, 0.005, 0.01, 0.02, 0.05, 0.1]
+    min_confs = [0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8]
 
     """data sets"""
     grocery_data_collect_func = partial(read_grocery_data, dataset_path=GROCERY_STORE_DATA_PATH)

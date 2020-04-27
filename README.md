@@ -11,12 +11,15 @@ Body -> Head [Support, Confidence]
 2. Confidence(A -> B) = Pr[B | A] 是一个条件概率
 
 1. 强关联规则
+
 满足 Support(A -> B) >= min_sup && Confidence(A -> B) >= min_conf
 
 2. k 项集
+
 包含 k 个 items 的集合
 
 3. 频繁项集
+
 满足 min_sup 的项集
  
 ## 规则挖掘方法

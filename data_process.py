@@ -70,7 +70,7 @@ def read_dummy_data():
                              "I1, I2, I3, I5", "I1, I2, I3"]
     })
     db = pd.DataFrame()
-    db["transactions"] = df["List_of_item_ids"].apply(lambda x: set(x.split(", ")))
+    db["items"] = df["List_of_item_ids"].apply(lambda x: set(x.split(", ")))
     items = reduce(lambda a, b: a | b, db.values)[0]
     item_counts = len(items)
 

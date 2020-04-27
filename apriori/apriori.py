@@ -8,11 +8,16 @@ from math import ceil
 
 def apriori_frequent_items(df, items, item_counts, min_sup=0.05, debug=False):
     """
+    >>>{1: [(('I1',), 6), (('I2',), 7), (('I3',), 6), (('I4',), 2), (('I5',), 2)],
+        2: [(('I1', 'I2'), 4),(('I1', 'I3'), 4),(('I1', 'I5'), 2),(('I2', 'I3'), 4),(('I2', 'I4'), 2),(('I2', 'I5'), 2)],
+        3: [(('I1', 'I2', 'I3'), 2), (('I1', 'I2', 'I5'), 2)]
+        }
     generate frequent item sets by Apriori algorithm
     :param df:
     :param items:
     :param item_counts:
     :param min_sup:
+    :param debug: debug mode
     :return:
     """
     print("Find frequent item sets by Apriori algorithm")

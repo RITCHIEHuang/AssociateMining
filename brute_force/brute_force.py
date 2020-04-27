@@ -5,7 +5,7 @@ from itertools import combinations
 from math import ceil
 
 
-def bf_frequent_items(df, items, item_counts, min_sup=0.05):
+def bf_frequent_items(df, items, item_counts, min_sup=0.05, debug=False):
     """
     generate all possible frequent item sets by relative min support
     >>> {1: {(('I5',), 2), (('I2',), 7), (('I1',), 6), (('I3',), 6), (('I4',), 2)},
@@ -39,43 +39,9 @@ def bf_frequent_items(df, items, item_counts, min_sup=0.05):
             break
         frequent_sets[k] = filtered_k_subsets
 
-    # for k_item_subset in k_item_subsets:
-    #     k_item_subset = set(k_item_subset)
-    #
-    #     filter_num = (k_item_subset <= df["items"]).sum()
-    #     if filter_num >= min_threshold:
-    #         frequent_sets[k].append(k_item_subset)  # frequent_sets of type defaultdict(list)
-
-    print("Final frequent item sets")
-    print("=" * 100)
-    pprint.pprint(frequent_sets)
-    print("=" * 100)
+    if debug:
+        print("Final frequent item sets")
+        print("=" * 100)
+        pprint.pprint(frequent_sets)
+        print("=" * 100)
     return frequent_sets
-
-#
-# def brute_force_mining(min_sup, min_conf, data_collect_func):
-#     df, items, item_counts = data_collect_func()
-#     frequent_sets = get_frequent_items(df, items, item_counts, min_sup=min_sup)
-#
-#     all_rules = set()
-#     # generate all rules A => B
-#     for k, vs in frequent_sets.items():
-#         if k <= 1:
-#             continue
-#         for v_sup in vs:
-#             *v, sup = v_sup
-#             v = v[0]
-#             # note that v is a k-item frequent set
-#             for t in range(1, k):
-#                 frequent_subsets = list(combinations(v, t))  # non-empty set
-#                 curr_rule = {A: (tuple(set(v) - set(A)), sup / (set(A) <= df[
-#                     "items"]).sum()) for A in frequent_subsets if
-#                              (sup / (set(A) <= df[
-#                                  "items"]).sum()) >= min_conf}  # complementary set of A
-#                 # print(curr_rule)
-#                 all_rules |= set(curr_rule.items())
-#
-#     print("Final Strong rule")
-#     print("=" * 100)
-#     pprint.pprint(all_rules)
-#     print("=" * 100)

@@ -4,7 +4,7 @@ import pprint
 from itertools import combinations
 
 
-def generate_strong_rule(min_conf, df, frequent_sets):
+def generate_strong_rule(min_conf, df, frequent_sets, debug=False):
     all_rules = set()
     # generate all rules A => B
     for k, vs in frequent_sets.items():
@@ -23,9 +23,9 @@ def generate_strong_rule(min_conf, df, frequent_sets):
                 # print(curr_rule)
                 all_rules |= set(curr_rule.items())
 
-    print("Final Strong rule")
-    print("=" * 100)
-    pprint.pprint(all_rules)
-    print("=" * 100)
-
+    if debug:
+        print("Final Strong rule")
+        print("=" * 100)
+        pprint.pprint(all_rules)
+        print("=" * 100)
     return all_rules

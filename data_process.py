@@ -56,6 +56,8 @@ def read_unix_commands_data(dataset_path=None):
             df = df.append(pd.DataFrame(file_data[0], columns=["items"]), ignore_index=True)
     items = reduce(lambda a, b: a | b, df.values)[0]
     item_counts = len(items)
+
+    df.to_csv("./dataset/UNIX_usage/unix_usage.csv")
     return df, items, item_counts
 
 

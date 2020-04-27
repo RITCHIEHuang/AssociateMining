@@ -3,8 +3,6 @@
 import os
 import time
 from functools import partial, reduce
-
-import numpy as np
 import pandas as pd
 
 from apriori.apriori import apriori_frequent_items
@@ -49,7 +47,7 @@ def test(output_dir="./result/"):
     ###########################################
     #  Fp-growth algorithm
     ###########################################
-    *_, fp_frequent_item_sets = fp_growth_frequent_items(df=df, min_sup=0.21)
+    *_, fp_frequent_item_sets = fp_growth_frequent_items(df=df, min_sup=min_support)
     write_frequent_item_set_to_file(fp_frequent_item_sets,
                                     file_path=f"{output_dir}fp/frequent_set/sup_{min_support}_conf_{min_confidence}.txt")
     fp_strong_rules = generate_strong_rule(min_confidence, df, fp_frequent_item_sets)
@@ -58,6 +56,12 @@ def test(output_dir="./result/"):
 
 
 def write_frequent_item_set_to_file(frequent_set, file_path):
+    """
+    write frequent item sets to file
+    :param frequent_set:
+    :param file_path:
+    :return:
+    """
     dir = os.path.dirname(file_path)
     if not os.path.exists(dir):
         os.makedirs(dir)
@@ -73,6 +77,12 @@ def write_frequent_item_set_to_file(frequent_set, file_path):
 
 
 def write_rule_to_file(rule_set, file_path):
+    """
+    write rules to file
+    :param rule_set:
+    :param file_path:
+    :return:
+    """
     dir = os.path.dirname(file_path)
     if not os.path.exists(dir):
         os.makedirs(dir)
@@ -149,7 +159,7 @@ def main(output_dir="./result/"):
                 #  Fp-growth algorithm
                 ###########################################
                 time_start = time.time()
-                *_, fp_frequent_item_sets = fp_growth_frequent_items(df=df, min_sup=0.21)
+                *_, fp_frequent_item_sets = fp_growth_frequent_items(df=df, min_sup=min_sup)
                 fp_time_cost = time.time() - time_start
                 print(f"Fp-growth spent {fp_time_cost} s for mining frequent item sets.")
                 write_frequent_item_set_to_file(fp_frequent_item_sets,
@@ -171,4 +181,20 @@ def main(output_dir="./result/"):
 
 
 if __name__ == '__main__':
+    """
+    流程:
+    
+    1. 指定 min support 用某种算法(brute force, apriori, fp-growth) 挖掘出频繁项集，并写入文件
+    2. 根频繁项集生成满足 min confidence 的强规则， 并写入文件
+    
+    example:
+    >>>
+    *_, fp_frequent_item_sets = fp_growth_frequent_items(df=df, min_sup=min_support)
+    write_frequent_item_set_to_file(fp_frequent_item_sets,
+                                    file_path=f"{output_dir}fp/frequent_set/sup_{min_support}_conf_{min_confidence}.txt")
+    fp_strong_rules = generate_strong_rule(min_confidence, df, fp_frequent_item_sets)
+    write_rule_to_file(fp_strong_rules,
+                       file_path=f"{output_dir}fp/rule/sup_{min_support}_conf_{min_confidence}.txt")
+
+    """
     test(output_dir="./result/")

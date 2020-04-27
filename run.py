@@ -184,7 +184,7 @@ if __name__ == '__main__':
     """
     流程:
     
-    1. 指定 min support 用某种算法(brute force, apriori, fp-growth) 挖掘出频繁项集，并写入文件
+    1. 指定 min support 用某种算法 (brute force, apriori, fp-growth) 挖掘出频繁项集，并写入文件
     2. 根频繁项集生成满足 min confidence 的强规则， 并写入文件
     
     example:

@@ -27,7 +27,7 @@ def bf_frequent_items(df, items, item_counts, min_sup=0.05, debug=False):
     for k in range(1, 1 + item_counts):
         k_item_subsets = combinations(items, k)  # all possible k-item sets
 
-        print(f"Process {k} subsets")
+        print(f"Process {k}-item subsets")
         # check satisfied k-item sets
         filtered_k_subsets = {(
             tuple(k_item_subset), (set(k_item_subset) <= df["items"]).sum()) for k_item_subset in k_item_subsets

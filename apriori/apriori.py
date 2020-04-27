@@ -48,7 +48,7 @@ def apriori_frequent_items(df, items, item_counts, min_sup=0.05, debug=False):
 
     # perform level-wise generation by join two k - 1 frequent sets and pruning
     for k in range(2, 1 + item_counts):
-        print(f"Process {k} subsets")
+        print(f"Process {k}-item subsets")
         cur_item_sets = []
         cur_hash_sets = set()
         for i in range(len(frequent_k_item_sets) - 1):

@@ -7,8 +7,8 @@
 Body -> Head [Support, Confidence]
 
 具体的定义，给定规则 A -> B (A 和 B 不交)
-1. Support(A -> B) = Pr[A and B] 是联合概率
-2. Confidence(A -> B) = Pr[B | A] 是一个条件概率
+(1). Support(A -> B) = Pr[A and B] 是联合概率
+(2). Confidence(A -> B) = Pr[B | A] 是一个条件概率
 
 1. 强关联规则
 

@@ -34,7 +34,7 @@ def test(output_dir="./result/"):
     write_frequent_item_set_to_file(bf_frequent_item_sets,
                                     file_path=f"{output_dir}bf/frequent_set/sup_{min_support}_conf_{min_confidence}.txt")
     bf_strong_rules = generate_strong_rule(min_confidence, df, bf_frequent_item_sets)
-    write_rule_to_file(bf_strong_rules, file_path=f"{output_dir}bf/rules/sup_{min_support}_conf_{min_confidence}.txt")
+    write_rule_to_file(bf_strong_rules, file_path=f"{output_dir}bf/rule/sup_{min_support}_conf_{min_confidence}.txt")
 
     ###########################################
     #  Apriori algorithm
@@ -43,7 +43,7 @@ def test(output_dir="./result/"):
     write_frequent_item_set_to_file(bf_frequent_item_sets,
                                     file_path=f"{output_dir}ap/frequent_set/sup_{min_support}_conf_{min_confidence}.txt")
     ap_strong_rules = generate_strong_rule(min_confidence, df, ap_frequent_item_sets)
-    write_rule_to_file(ap_strong_rules, file_path=f"{output_dir}ap/rules/sup_{min_support}_conf_{min_confidence}.txt")
+    write_rule_to_file(ap_strong_rules, file_path=f"{output_dir}ap/rule/sup_{min_support}_conf_{min_confidence}.txt")
 
     ###########################################
     #  Fp-growth algorithm
@@ -96,7 +96,7 @@ def main(output_dir="./result/"):
                  'fp_growth'])
 
     experiment_id = 0
-    for data_set, data_func in zip(data_funcs):
+    for data_set, data_func in data_funcs:
         df, items, item_counts = data_func()
         for min_sup in min_sups:
             for min_conf in min_confs:
@@ -119,7 +119,7 @@ def main(output_dir="./result/"):
 
                 bf_strong_rules = generate_strong_rule(min_conf, df, bf_frequent_item_sets)
                 write_rule_to_file(bf_strong_rules,
-                                   file_path=f"{output_dir}bf/rules_sup_{min_sup}_conf_{min_conf}.txt")
+                                   file_path=f"{output_dir}bf/rule/sup_{min_sup}_conf_{min_conf}.txt")
 
                 ###########################################
                 #  Apriori algorithm
@@ -133,7 +133,7 @@ def main(output_dir="./result/"):
 
                 ap_strong_rules = generate_strong_rule(min_conf, df, ap_frequent_item_sets)
                 write_rule_to_file(ap_strong_rules,
-                                   file_path=f"{output_dir}ap/rules_sup_{min_sup}_conf_{min_conf}.txt")
+                                   file_path=f"{output_dir}ap/rule/sup_{min_sup}_conf_{min_conf}.txt")
 
                 ###########################################
                 #  TODO Fp-growth algorithm
@@ -151,4 +151,4 @@ def main(output_dir="./result/"):
 
 
 if __name__ == '__main__':
-    test(output_dir="./result/")
+    main(output_dir="./result/")

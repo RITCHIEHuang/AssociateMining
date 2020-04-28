@@ -35,7 +35,7 @@ def apriori_frequent_items(df, items, item_counts, min_sup=0.05, debug=False):
         ((tuple(item_set), (set(item_set) <= df["items"]).sum()) for item_set in combinations(items, 1)
          if (set(item_set) <= df["items"]).sum() >= min_threshold),
         key=lambda x: x[0])
-    print(f"Process 1-item subsets in {time.time() - time_start} s")
+    print(f"Process 1-item subsets in {time.time() - time_start: .5f} s")
     hash_k_sets = {item_set for item_set in combinations(items, 1) if
                    (set(item_set) <= df["items"]).sum() >= min_threshold}
 
@@ -68,7 +68,7 @@ def apriori_frequent_items(df, items, item_counts, min_sup=0.05, debug=False):
                         if candidate_sup >= min_threshold:
                             cur_item_sets.append((candidate_item_set, candidate_sup))
                             cur_hash_sets.add(candidate_item_set)
-        print(f"Process {k}-item subsets in {time.time() - time_start} s")
+        print(f"Process {k}-item subsets in {time.time() - time_start: .5f} s")
         if len(cur_item_sets) <= 0:
             break
 

@@ -4,3 +4,5 @@ __pycache__/
 */__pycache__/
 # dataset/
 result/
+fp_growth/fp_growth_v2.py
+*.csv

@@ -69,7 +69,7 @@ def create_tree(data_set, min_sup):
     header_table = {}
     for trans in data_set:
         for item in trans:
-            header_table[item] = header_table.get(item, 0) + data_set[trans]# header_table[item] + data_set[trans]
+            header_table[item] = header_table.get(item, 0) + data_set[trans]  # header_table[item] + data_set[trans]
     for item_1 in list(header_table.keys()):
         if header_table[item_1] < min_sup:
             del (header_table[item_1])
@@ -125,7 +125,7 @@ def mining_fp_tree(header_table, min_sup, pre_path, fre_item_set, fre_set_count)
     :param fre_set_count:
     :return:
     """
-    fre_items = [v[0] for v in sorted(header_table.items(), key=lambda p:p[1][0])]
+    fre_items = [v[0] for v in sorted(header_table.items(), key=lambda p: p[1][0])]
     for base_pat in fre_items:
         # add new frequent set
         new_fre_set = pre_path.copy()
@@ -143,8 +143,8 @@ def mining_fp_tree(header_table, min_sup, pre_path, fre_item_set, fre_set_count)
     return fre_item_set, fre_set_count
 
 
-def fp_growth_frequent_items(df, min_sup=0.3, debug=False):
-    print("Find frequent item sets by Brute Force")
+def fp_growth_frequent_items(df, items, item_counts, min_sup=0.3, debug=False):
+    print("Find frequent item sets by FP-growth")
     print("=" * 100)
     """
     基于fp-growth算法生成频繁项集
@@ -169,11 +169,11 @@ def fp_growth_frequent_items(df, min_sup=0.3, debug=False):
         fre_item_sets[len(k)].append((tuple(k), v))
     if debug:
         pprint.pprint(fre_item_sets)
-    return fre_item_set, fre_item_count, fre_item_sets
+    return fre_item_sets
 
 
 if __name__ == '__main__':
-    df, * _ = read_dummy_data()
+    df, *_ = read_dummy_data()
     frequent_item_set, frequent_set_count, frequent_item_sets = fp_growth_frequent_items(df=df, min_sup=0.21)
     print(frequent_set_count)
     print(frequent_item_set)

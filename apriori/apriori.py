@@ -2,6 +2,7 @@
 # Created at 2020/4/26
 
 import pprint
+import time
 from itertools import combinations
 from math import ceil
 
@@ -29,10 +30,12 @@ def apriori_frequent_items(df, items, item_counts, min_sup=0.05, debug=False):
 
     # initialized by 1 frequent items
     # all elements sorted by dictionary order
+    time_start = time.time()
     frequent_k_item_sets = sorted(
         ((tuple(item_set), (set(item_set) <= df["items"]).sum()) for item_set in combinations(items, 1)
          if (set(item_set) <= df["items"]).sum() >= min_threshold),
         key=lambda x: x[0])
+    print(f"Process 1-item subsets in {time.time() - time_start} s")
     hash_k_sets = {item_set for item_set in combinations(items, 1) if
                    (set(item_set) <= df["items"]).sum() >= min_threshold}
 
@@ -48,7 +51,7 @@ def apriori_frequent_items(df, items, item_counts, min_sup=0.05, debug=False):
 
     # perform level-wise generation by join two k - 1 frequent sets and pruning
     for k in range(2, 1 + item_counts):
-        print(f"Process {k}-item subsets")
+        time_start = time.time()
         cur_item_sets = []
         cur_hash_sets = set()
         for i in range(len(frequent_k_item_sets) - 1):
@@ -65,7 +68,7 @@ def apriori_frequent_items(df, items, item_counts, min_sup=0.05, debug=False):
                         if candidate_sup >= min_threshold:
                             cur_item_sets.append((candidate_item_set, candidate_sup))
                             cur_hash_sets.add(candidate_item_set)
-
+        print(f"Process {k}-item subsets in {time.time() - time_start} s")
         if len(cur_item_sets) <= 0:
             break
 

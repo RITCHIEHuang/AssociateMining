@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # Created at 2020/4/27
 import math
+import pprint
 from collections import defaultdict
 
 from data_process import read_dummy_data
@@ -142,7 +143,9 @@ def mining_fp_tree(header_table, min_sup, pre_path, fre_item_set, fre_set_count)
     return fre_item_set, fre_set_count
 
 
-def fp_growth_frequent_items(df, min_sup=0.3):
+def fp_growth_frequent_items(df, min_sup=0.3, debug=False):
+    print("Find frequent item sets by Brute Force")
+    print("=" * 100)
     """
     基于fp-growth算法生成频繁项集
     :param df: transaction set -> dataframe
@@ -164,6 +167,8 @@ def fp_growth_frequent_items(df, min_sup=0.3):
     fre_item_sets = defaultdict(list)
     for k, v in fre_item_count.items():
         fre_item_sets[len(k)].append((tuple(k), v))
+    if debug:
+        pprint.pprint(fre_item_sets)
     return fre_item_set, fre_item_count, fre_item_sets
 
 

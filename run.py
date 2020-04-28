@@ -16,12 +16,12 @@ GROCERY_STORE_DATA_PATH = "./dataset/GroceryStore/Groceries.csv"
 UNIX_COMMAND_DATA_PATH = "./dataset/UNIX_usage/"
 
 
-def test(output_dir="./result/"):
+def test(output_dir="./result/", debug=False):
     if not os.path.exists(output_dir):
         os.mkdir(output_dir)
     # test code on dummy data
-    min_support = 0.21  # fractional min support
-    min_confidence = 0.5  # fractional min confidence
+    min_sup = 0.21  # fractional min support
+    min_conf = 0.5  # fractional min confidence
 
     dummy_data_collect_func = read_dummy_data
     df, items, item_counts = dummy_data_collect_func()
@@ -29,31 +29,39 @@ def test(output_dir="./result/"):
     ###########################################
     #  Brute force Baseline
     ###########################################
-
-    bf_frequent_item_sets = bf_frequent_items(df, items, item_counts, min_sup=min_support)
+    time_start = time.time()
+    bf_frequent_item_sets = bf_frequent_items(df, items, item_counts, min_sup=min_sup, debug=debug)
+    bf_time_cost = time.time() - time_start
+    print(f"Brute force spent {bf_time_cost} s for mining frequent item sets.")
     write_frequent_item_set_to_file(bf_frequent_item_sets,
-                                    file_path=f"{output_dir}bf/frequent_set/sup_{min_support}_conf_{min_confidence}.txt")
-    bf_strong_rules = generate_strong_rule(min_confidence, df, bf_frequent_item_sets)
-    write_rule_to_file(bf_strong_rules, file_path=f"{output_dir}bf/rule/sup_{min_support}_conf_{min_confidence}.txt")
+                                    file_path=f"{output_dir}bf/frequent_set/sup_{min_sup}.txt")
+    bf_strong_rules = generate_strong_rule(min_conf, df, bf_frequent_item_sets, debug=debug)
+    write_rule_to_file(bf_strong_rules, file_path=f"{output_dir}bf/rule/sup_{min_sup}_conf_{min_conf}.txt")
 
     ###########################################
     #  Apriori algorithm
     ###########################################
-    ap_frequent_item_sets = apriori_frequent_items(df, items, item_counts, min_sup=min_support)
+    time_start = time.time()
+    ap_frequent_item_sets = apriori_frequent_items(df, items, item_counts, min_sup=min_sup, debug=debug)
+    ap_time_cost = time.time() - time_start
+    print(f"Apriori spent {ap_time_cost} s for mining frequent item sets.")
     write_frequent_item_set_to_file(ap_frequent_item_sets,
-                                    file_path=f"{output_dir}ap/frequent_set/sup_{min_support}_conf_{min_confidence}.txt")
-    ap_strong_rules = generate_strong_rule(min_confidence, df, ap_frequent_item_sets)
-    write_rule_to_file(ap_strong_rules, file_path=f"{output_dir}ap/rule/sup_{min_support}_conf_{min_confidence}.txt")
+                                    file_path=f"{output_dir}ap/frequent_set/sup_{min_sup}.txt")
+    ap_strong_rules = generate_strong_rule(min_conf, df, ap_frequent_item_sets, debug=debug)
+    write_rule_to_file(ap_strong_rules, file_path=f"{output_dir}ap/rule/sup_{min_sup}_conf_{min_conf}.txt")
 
     ###########################################
     #  Fp-growth algorithm
     ###########################################
-    *_, fp_frequent_item_sets = fp_growth_frequent_items(df=df, min_sup=min_support)
+    time_start = time.time()
+    *_, fp_frequent_item_sets = fp_growth_frequent_items(df=df, min_sup=min_sup, debug=debug)
+    fp_time_cost = time.time() - time_start
+    print(f"FP-growth spent {fp_time_cost} s for mining frequent item sets.")
     write_frequent_item_set_to_file(fp_frequent_item_sets,
-                                    file_path=f"{output_dir}fp/frequent_set/sup_{min_support}_conf_{min_confidence}.txt")
-    fp_strong_rules = generate_strong_rule(min_confidence, df, fp_frequent_item_sets)
+                                    file_path=f"{output_dir}fp/frequent_set/sup_{min_sup}.txt")
+    fp_strong_rules = generate_strong_rule(min_conf, df, fp_frequent_item_sets, debug=debug)
     write_rule_to_file(fp_strong_rules,
-                       file_path=f"{output_dir}fp/rule/sup_{min_support}_conf_{min_confidence}.txt")
+                       file_path=f"{output_dir}fp/rule/sup_{min_sup}_conf_{min_conf}.txt")
 
 
 def write_frequent_item_set_to_file(frequent_set, file_path):
@@ -90,7 +98,7 @@ def write_rule_to_file(rule_set, file_path):
 
     with open(file_path, "w+") as f:
         f.write(f"Find {len(rule_set)} rules !!!" + os.linesep)
-        rule_str_func = lambda rule: rule[0][0] + "===>" + rule[1][0][0] + ", confidence: " + str(
+        rule_str_func = lambda rule: ", ".join(rule[0]) + "===>" + ", ".join(rule[1][0]) + ", confidence: " + str(
             rule[1][1]) + os.linesep
         f.writelines([rule_str_func(rule) for rule in rule_set])
 
@@ -105,13 +113,13 @@ def main(output_dir="./result/"):
     # min_confs = np.linspace(0.2, 0.8, 20)
 
     min_sups = [0.0005, 0.001, 0.005, 0.01, 0.02, 0.05, 0.1]
-    min_confs = [0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7, 0.75, 0.8]
+    min_confs = [0.2, 0.25, 0.3, 0.35, 0.4, 0.45, 0.5, 0.55, 0.6, 0.65, 0.7]
 
     """data sets"""
     grocery_data_collect_func = partial(read_grocery_data, dataset_path=GROCERY_STORE_DATA_PATH)
     unix_commands_data_collect_func = partial(read_unix_commands_data, dataset_path=UNIX_COMMAND_DATA_PATH)
-    data_funcs = [('unix_usage', unix_commands_data_collect_func)]
-    # ('grocery', grocery_data_collect_func)
+    data_funcs = [('grocery', grocery_data_collect_func), ('unix_usage', unix_commands_data_collect_func)]
+
     record_df = pd.DataFrame(
         columns=['min_sup', 'min_conf', 'data_set', 'num_items', 'num_transactions', 'algo', 'time'])
 
@@ -122,16 +130,25 @@ def main(output_dir="./result/"):
             ###########################################
             #  Brute force Baseline
             ###########################################
-            # time_start = time.time()
-            # bf_frequent_item_sets = bf_frequent_items(df, items, item_counts, min_sup=min_sup)
-            # bf_time_cost = time.time() - time_start
-            # print(f"Brute force spent {bf_time_cost} s for mining frequent item sets.")
-            # write_frequent_item_set_to_file(bf_frequent_item_sets,
-            #                                 file_path=f"{output_dir}bf/frequent_set/sup_{min_sup}_conf_{min_conf}.txt")
-            #
-            # bf_strong_rules = generate_strong_rule(min_conf, df, bf_frequent_item_sets)
-            # write_rule_to_file(bf_strong_rules,
-            #                    file_path=f"{output_dir}bf/rule/sup_{min_sup}_conf_{min_conf}.txt")
+            if min_sup >= 0.05:
+                time_start = time.time()
+                bf_frequent_item_sets = bf_frequent_items(df, items, item_counts, min_sup=min_sup)
+                bf_time_cost = time.time() - time_start
+                print(f"Brute force spent {bf_time_cost} s for mining frequent item sets.")
+                write_frequent_item_set_to_file(bf_frequent_item_sets,
+                                                file_path=f"{output_dir}bf/frequent_set/sup_{min_sup}.txt")
+
+                for min_conf in min_confs:
+                    print("=" * 150)
+                    print(
+                        f"Experiment {experiment_id + 1} setting: Algo: Brute force, min support: {min_sup}, min confidence: {min_conf}")
+                    print(
+                        f"Data set descriptions: data set: {data_set}, number of items: {item_counts}, number of transactions:"
+                        f" {df.shape[0]}")
+                    print()
+                    bf_strong_rules = generate_strong_rule(min_conf, df, bf_frequent_item_sets)
+                    write_rule_to_file(bf_strong_rules,
+                                       file_path=f"{output_dir}bf/rule/sup_{min_sup}_conf_{min_conf}.txt")
 
             ###########################################
             #  Apriori algorithm
@@ -145,7 +162,8 @@ def main(output_dir="./result/"):
 
             for min_conf in min_confs:
                 print("=" * 150)
-                print(f"Experiment {experiment_id + 1} setting: min support={min_sup}, min confidence={min_conf}")
+                print(
+                    f"Experiment {experiment_id + 1} setting: Algo: Apriori, min support: {min_sup}, min confidence: {min_conf}")
                 print(
                     f"Data set descriptions: data set: {data_set}, number of items: {item_counts}, number of transactions:"
                     f" {df.shape[0]}")
@@ -167,15 +185,23 @@ def main(output_dir="./result/"):
             ###########################################
             #  Fp-growth algorithm
             ###########################################
-            # time_start = time.time()
-            # *_, fp_frequent_item_sets = fp_growth_frequent_items(df=df, min_sup=min_sup)
-            # fp_time_cost = time.time() - time_start
-            # print(f"Fp-growth spent {fp_time_cost} s for mining frequent item sets.")
-            # write_frequent_item_set_to_file(fp_frequent_item_sets,
-            #                                 file_path=f"{output_dir}fp/frequent_set/sup_{min_sup}_conf_{min_conf}.txt")
-            # fp_strong_rules = generate_strong_rule(min_conf, df, fp_frequent_item_sets)
-            # write_rule_to_file(fp_strong_rules,
-            #                    file_path=f"{output_dir}fp/rule/sup_{min_sup}_conf_{min_conf}.txt")
+            time_start = time.time()
+            *_, fp_frequent_item_sets = fp_growth_frequent_items(df=df, min_sup=min_sup)
+            fp_time_cost = time.time() - time_start
+            print(f"Fp-growth spent {fp_time_cost} s for mining frequent item sets.")
+            write_frequent_item_set_to_file(fp_frequent_item_sets,
+                                            file_path=f"{output_dir}fp/frequent_set/sup_{min_sup}.txt")
+            for min_conf in min_confs:
+                print("=" * 150)
+                print(
+                    f"Experiment {experiment_id + 1} setting: Algo: FP-growth, min support: {min_sup}, min confidence: {min_conf}")
+                print(
+                    f"Data set descriptions: data set: {data_set}, number of items: {item_counts}, number of transactions:"
+                    f" {df.shape[0]}")
+                print()
+                fp_strong_rules = generate_strong_rule(min_conf, df, fp_frequent_item_sets)
+                write_rule_to_file(fp_strong_rules,
+                                   file_path=f"{output_dir}fp/rule/sup_{min_sup}_conf_{min_conf}.txt")
 
     record_df.to_csv("record.csv")
 
@@ -197,4 +223,4 @@ if __name__ == '__main__':
                        file_path=f"{output_dir}fp/rule/sup_{min_support}_conf_{min_confidence}.txt")
 
     """
-    main(output_dir="./result/")
+    test(output_dir="./result/")

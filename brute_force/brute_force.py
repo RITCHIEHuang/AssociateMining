@@ -20,7 +20,7 @@ def bf_frequent_items(df, items, item_counts, min_sup=0.05, debug=False):
     :return:
     """
     print("Find frequent item sets by Brute Force")
-    print("=" * 100)
+    print("-" * 100)
 
     frequent_sets = {}  # dictionary, key-> k, value-> k item sets
     min_threshold = ceil(df.shape[0] * min_sup)
@@ -38,8 +38,6 @@ def bf_frequent_items(df, items, item_counts, min_sup=0.05, debug=False):
         if len(filtered_k_subsets) <= 0:
             break
         frequent_sets[k] = filtered_k_subsets
-
-    print("=" * 100)
 
     if debug:
         print("Final frequent item sets")

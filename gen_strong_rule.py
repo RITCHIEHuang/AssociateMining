@@ -6,8 +6,8 @@ from itertools import combinations
 
 
 def generate_strong_rule(min_conf, df, frequent_sets, debug=False):
-    print("Find frequent item sets by Brute Force")
-    print("=" * 100)
+    print("Generate Strong rules")
+    print("-" * 100)
     all_rules = set()
     # generate all rules A => B
     t_start = time.time()
@@ -28,7 +28,7 @@ def generate_strong_rule(min_conf, df, frequent_sets, debug=False):
                 # print(curr_rule)
                 all_rules |= set(curr_rule.items())
         print(f"Process {k}-items rules in {time.time() - time_start: .5f} s")
-    print("=" * 100)
+    print("-" * 100)
     t_cost = time.time() - t_start
     if debug:
         print("Final Strong rule")

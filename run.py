@@ -130,26 +130,33 @@ def main(output_dir="./result/"):
             ###########################################
             #  Brute force Baseline
             ###########################################
-            if min_sup >= 0.05:
-                time_start = time.time()
-                bf_frequent_item_sets = bf_frequent_items(df, items, item_counts, min_sup=min_sup)
-                bf_time_cost = time.time() - time_start
-                print(f"Brute force spent {bf_time_cost} s for mining frequent item sets.")
-                write_frequent_item_set_to_file(bf_frequent_item_sets,
-                                                file_path=f"{output_dir}bf/frequent_set/sup_{min_sup}.txt")
-
-                for min_conf in min_confs:
-                    print("=" * 150)
-                    print(
-                        f"Experiment {experiment_id + 1} setting: Algo: Brute force, min support: {min_sup}, min confidence: {min_conf}")
-                    print(
-                        f"Data set descriptions: data set: {data_set}, number of items: {item_counts}, number of transactions:"
-                        f" {df.shape[0]}")
-                    print()
-                    bf_strong_rules = generate_strong_rule(min_conf, df, bf_frequent_item_sets)
-                    write_rule_to_file(bf_strong_rules,
-                                       file_path=f"{output_dir}bf/rule/sup_{min_sup}_conf_{min_conf}.txt")
-
+            # if min_sup >= 0.05:
+            #     time_start = time.time()
+            #     bf_frequent_item_sets = bf_frequent_items(df, items, item_counts, min_sup=min_sup)
+            #     bf_time_cost = time.time() - time_start
+            #     print(f"Brute force spent {bf_time_cost} s for mining frequent item sets.")
+            #     write_frequent_item_set_to_file(bf_frequent_item_sets,
+            #                                     file_path=f"{output_dir}bf/frequent_set/sup_{min_sup}.txt")
+            #
+            #     for min_conf in min_confs:
+            #         print("=" * 150)
+            #         print(
+            #             f"Experiment {experiment_id + 1} setting: Algo: Brute force, min support: {min_sup}, min confidence: {min_conf}")
+            #         print(
+            #             f"Data set descriptions: data set: {data_set}, number of items: {item_counts}, number of transactions:"
+            #             f" {df.shape[0]}")
+            #         print()
+            #         bf_strong_rules = generate_strong_rule(min_conf, df, bf_frequent_item_sets)
+            #         write_rule_to_file(bf_strong_rules,
+            #                            file_path=f"{output_dir}bf/rule/sup_{min_sup}_conf_{min_conf}.txt")
+            #         record_df = record_df.append(pd.Series(
+            #             {"min_sup": min_sup, "min_conf": min_conf, "data_set": data_set, "num_items": item_counts,
+            #              "num_transactions": df.shape[0],
+            #              "algo": "Brute force",
+            #              "time": bf_time_cost}),
+            #             ignore_index=True)
+            #         experiment_id = experiment_id + 1
+            #     print("=" * 150)
             ###########################################
             #  Apriori algorithm
             ###########################################
@@ -185,24 +192,31 @@ def main(output_dir="./result/"):
             ###########################################
             #  Fp-growth algorithm
             ###########################################
-            time_start = time.time()
-            *_, fp_frequent_item_sets = fp_growth_frequent_items(df=df, min_sup=min_sup)
-            fp_time_cost = time.time() - time_start
-            print(f"Fp-growth spent {fp_time_cost} s for mining frequent item sets.")
-            write_frequent_item_set_to_file(fp_frequent_item_sets,
-                                            file_path=f"{output_dir}fp/frequent_set/sup_{min_sup}.txt")
-            for min_conf in min_confs:
-                print("=" * 150)
-                print(
-                    f"Experiment {experiment_id + 1} setting: Algo: FP-growth, min support: {min_sup}, min confidence: {min_conf}")
-                print(
-                    f"Data set descriptions: data set: {data_set}, number of items: {item_counts}, number of transactions:"
-                    f" {df.shape[0]}")
-                print()
-                fp_strong_rules = generate_strong_rule(min_conf, df, fp_frequent_item_sets)
-                write_rule_to_file(fp_strong_rules,
-                                   file_path=f"{output_dir}fp/rule/sup_{min_sup}_conf_{min_conf}.txt")
-
+            # time_start = time.time()
+            # *_, fp_frequent_item_sets = fp_growth_frequent_items(df=df, min_sup=min_sup)
+            # fp_time_cost = time.time() - time_start
+            # print(f"Fp-growth spent {fp_time_cost} s for mining frequent item sets.")
+            # write_frequent_item_set_to_file(fp_frequent_item_sets,
+            #                                 file_path=f"{output_dir}fp/frequent_set/sup_{min_sup}.txt")
+            # for min_conf in min_confs:
+            #     print("=" * 150)
+            #     print(
+            #         f"Experiment {experiment_id + 1} setting: Algo: FP-growth, min support: {min_sup}, min confidence: {min_conf}")
+            #     print(
+            #         f"Data set descriptions: data set: {data_set}, number of items: {item_counts}, number of transactions:"
+            #         f" {df.shape[0]}")
+            #     print()
+            #     fp_strong_rules = generate_strong_rule(min_conf, df, fp_frequent_item_sets)
+            #     write_rule_to_file(fp_strong_rules,
+            #                        file_path=f"{output_dir}fp/rule/sup_{min_sup}_conf_{min_conf}.txt")
+            #     record_df = record_df.append(pd.Series(
+            #         {"min_sup": min_sup, "min_conf": min_conf, "data_set": data_set, "num_items": item_counts,
+            #          "num_transactions": df.shape[0],
+            #          "algo": "FP-growth",
+            #          "time": fp_time_cost}),
+            #         ignore_index=True)
+            #     experiment_id = experiment_id + 1
+            #     print("=" * 150)
     record_df.to_csv("record.csv")
 
 

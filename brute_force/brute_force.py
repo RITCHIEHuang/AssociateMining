@@ -1,6 +1,7 @@
 #!/usr/bin/env python
 # Created at 2020/4/26
 import pprint
+import time
 from itertools import combinations
 from math import ceil
 
@@ -27,13 +28,13 @@ def bf_frequent_items(df, items, item_counts, min_sup=0.05, debug=False):
     for k in range(1, 1 + item_counts):
         k_item_subsets = combinations(items, k)  # all possible k-item sets
 
-        print(f"Process {k}-item subsets")
+        time_start = time.time()
         # check satisfied k-item sets
         filtered_k_subsets = {(
             tuple(k_item_subset), (set(k_item_subset) <= df["items"]).sum()) for k_item_subset in k_item_subsets
             if
             (set(k_item_subset) <= df["items"]).sum() >= min_threshold}
-
+        print(f"Process {k}-item subsets in {time.time() - time_start} s")
         # if k subsets support can't satisfy, k + 1, ... can't satisfy
         if len(filtered_k_subsets) <= 0:
             break

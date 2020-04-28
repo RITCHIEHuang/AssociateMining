@@ -33,6 +33,8 @@ def run_single_alg(min_sup=0.01, min_confs=(0.3,), output_dir="./result/", debug
     if not os.path.exists(output_dir):
         os.mkdir(output_dir)
 
+    print("*" * 100)
+    print()
     data_set_name = dataset_func.__name__.split("_")[1]
 
     df, items, item_counts = dataset_func()
@@ -43,6 +45,7 @@ def run_single_alg(min_sup=0.01, min_confs=(0.3,), output_dir="./result/", debug
 
     print(f"{alg} spent {alg_time_cost: .5f} s for mining dataset: {data_set_name} frequent item sets.")
 
+    print("=" * 100)
     write_frequent_item_set_to_file(alg_freq_item_sets,
                                     file_path=f"{output_dir}{alg}/frequent_set/{data_set_name}_sup_{min_sup}.txt")
 
@@ -56,7 +59,8 @@ def run_single_alg(min_sup=0.01, min_confs=(0.3,), output_dir="./result/", debug
 
             write_rule_to_file(alg_strong_rules,
                                file_path=f"{output_dir}{alg}/rule/{data_set_name}_sup_{min_sup}_conf_{min_conf}.txt")
-
+    print("*" * 100)
+    print()
     return alg_time_cost, rule_time_costs
 
 
@@ -319,3 +323,6 @@ if __name__ == '__main__':
     g.map(sns.lineplot, "min confidence", "running time")
     # sns.lineplot(x="min confidence", y="running time", hue="min support", data=df_rule_time)
     plt.show()
+
+    # t_freq, t_rules = run_single_alg(min_sup=0.01, min_confs=(0.5,), alg='fp',
+    #                                  dataset_func=read_grocery_data, run_rule=True)

@@ -145,7 +145,7 @@ def mining_fp_tree(header_table, min_sup, pre_path, fre_item_set, fre_set_count)
 
 def fp_growth_frequent_items(df, items, item_counts, min_sup=0.3, debug=False):
     print("Find frequent item sets by FP-growth")
-    print("=" * 100)
+    print("-" * 100)
     """
     基于fp-growth算法生成频繁项集
     :param df: transaction set -> dataframe

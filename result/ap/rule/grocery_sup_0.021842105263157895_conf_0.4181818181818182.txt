@@ -1,0 +1,10 @@
+Find 9 rules !!!
+domestic eggs===>whole milk, confidence: 0.47275641025641024
+root vegetables===>other vegetables, confidence: 0.43470149253731344
+whipped/sour cream===>whole milk, confidence: 0.44964539007092197
+root vegetables===>whole milk, confidence: 0.44869402985074625
+root vegetables, whole milk===>other vegetables, confidence: 0.47401247401247404
+other vegetables, root vegetables===>whole milk, confidence: 0.4892703862660944
+other vegetables, yogurt===>whole milk, confidence: 0.5128805620608899
+curd===>whole milk, confidence: 0.4904580152671756
+butter===>whole milk, confidence: 0.4972477064220184

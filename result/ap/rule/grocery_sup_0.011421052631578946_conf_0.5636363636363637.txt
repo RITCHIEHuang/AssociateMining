@@ -1,0 +1,4 @@
+Find 3 rules !!!
+butter, other vegetables===>whole milk, confidence: 0.5736040609137056
+root vegetables, tropical fruit===>whole milk, confidence: 0.5700483091787439
+root vegetables, tropical fruit===>other vegetables, confidence: 0.5845410628019324

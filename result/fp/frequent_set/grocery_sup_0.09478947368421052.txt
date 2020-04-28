@@ -1,0 +1,12 @@
+Find 9 frequent item sets !!!
+Including 9 1-item frequent set
+shopping bags, support: 969
+tropical fruit, support: 1032
+root vegetables, support: 1072
+bottled water, support: 1087
+yogurt, support: 1372
+soda, support: 1715
+rolls/buns, support: 1809
+other vegetables, support: 1903
+whole milk, support: 2513
+

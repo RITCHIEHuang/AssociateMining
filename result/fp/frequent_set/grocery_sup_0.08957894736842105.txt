@@ -1,0 +1,13 @@
+Find 10 frequent item sets !!!
+Including 10 1-item frequent set
+sausage, support: 924
+shopping bags, support: 969
+tropical fruit, support: 1032
+root vegetables, support: 1072
+bottled water, support: 1087
+yogurt, support: 1372
+soda, support: 1715
+rolls/buns, support: 1809
+other vegetables, support: 1903
+whole milk, support: 2513
+

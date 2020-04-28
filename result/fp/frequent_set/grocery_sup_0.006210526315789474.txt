@@ -1,0 +1,710 @@
+Find 701 frequent item sets !!!
+Including 108 1-item frequent set
+finished products, support: 64
+vinegar, support: 64
+soups, support: 67
+zwieback, support: 68
+popcorn, support: 71
+instant coffee, support: 73
+rice, support: 75
+liquor (appetizer), support: 78
+Instant food products, support: 79
+turkey, support: 80
+house keeping products, support: 82
+frozen potato products, support: 83
+specialty cheese, support: 84
+dog food, support: 84
+candles, support: 88
+sweet spreads, support: 89
+chocolate marshmallow, support: 89
+mayonnaise, support: 90
+photo/film, support: 91
+pet care, support: 93
+condensed milk, support: 101
+roll products , support: 101
+flower (seeds), support: 102
+dish cleaner, support: 103
+frozen dessert, support: 106
+salt, support: 106
+canned vegetables, support: 106
+liquor, support: 109
+spread cheese, support: 110
+cling film/bags, support: 112
+frozen fish, support: 115
+mustard, support: 118
+packaged fruit/vegetables, support: 128
+cake bar, support: 130
+seasonal products, support: 140
+canned fish, support: 148
+pasta, support: 148
+herbs, support: 160
+processed cheese, support: 163
+soft cheese, support: 168
+pot plants, support: 170
+flour, support: 171
+dishes, support: 173
+semi-finished bread, support: 174
+baking powder, support: 174
+pickled vegetables, support: 176
+white wine, support: 187
+detergent, support: 189
+red/blush wine, support: 189
+chewing gum, support: 207
+grapes, support: 220
+cat food, support: 229
+hard cheese, support: 241
+sliced cheese, support: 241
+ice cream, support: 246
+meat, support: 254
+beverages, support: 256
+ham, support: 256
+specialty bar, support: 269
+butter milk, support: 275
+oil, support: 276
+misc. beverages, support: 279
+frozen meals, support: 279
+candy, support: 294
+specialty chocolate, support: 299
+onions, support: 305
+hygiene articles, support: 324
+hamburger meat, support: 327
+berries, support: 327
+UHT-milk, support: 329
+sugar, support: 333
+dessert, support: 365
+long life bakery product, support: 368
+salty snack, support: 372
+waffles, support: 378
+cream cheese , support: 390
+white bread, support: 414
+chicken, support: 422
+frozen vegetables, support: 473
+chocolate, support: 488
+napkins, support: 515
+beef, support: 516
+curd, support: 524
+butter, support: 545
+pork, support: 567
+coffee, support: 571
+margarine, support: 576
+frankfurter, support: 580
+domestic eggs, support: 624
+brown bread, support: 638
+whipped/sour cream, support: 705
+fruit/vegetable juice, support: 711
+pip fruit, support: 744
+canned beer, support: 764
+newspapers, support: 785
+bottled beer, support: 792
+citrus fruit, support: 814
+pastry, support: 875
+sausage, support: 924
+shopping bags, support: 969
+tropical fruit, support: 1032
+root vegetables, support: 1072
+bottled water, support: 1087
+yogurt, support: 1372
+soda, support: 1715
+rolls/buns, support: 1809
+other vegetables, support: 1903
+whole milk, support: 2513
+
+Including 450 2-item frequent set
+root vegetables, herbs, support: 69
+whole milk, herbs, support: 76
+other vegetables, herbs, support: 76
+whole milk, processed cheese, support: 69
+other vegetables, soft cheese, support: 70
+soft cheese, whole milk, support: 74
+whole milk, pot plants, support: 68
+other vegetables, flour, support: 62
+whole milk, flour, support: 83
+whole milk, semi-finished bread, support: 70
+baking powder, other vegetables, support: 72
+baking powder, whole milk, support: 91
+other vegetables, pickled vegetables, support: 63
+pickled vegetables, whole milk, support: 70
+detergent, other vegetables, support: 63
+detergent, whole milk, support: 88
+grapes, whole milk, support: 72
+grapes, other vegetables, support: 89
+other vegetables, cat food, support: 64
+whole milk, cat food, support: 87
+yogurt, hard cheese, support: 63
+other vegetables, hard cheese, support: 93
+whole milk, hard cheese, support: 99
+sausage, sliced cheese, support: 69
+rolls/buns, sliced cheese, support: 75
+yogurt, sliced cheese, support: 79
+other vegetables, sliced cheese, support: 89
+whole milk, sliced cheese, support: 106
+meat, rolls/buns, support: 68
+meat, other vegetables, support: 98
+meat, whole milk, support: 98
+beverages, whole milk, support: 67
+yogurt, ham, support: 66
+ham, rolls/buns, support: 68
+ham, other vegetables, support: 90
+ham, whole milk, support: 113
+whole milk, specialty bar, support: 64
+specialty bar, soda, support: 71
+butter milk, rolls/buns, support: 75
+yogurt, butter milk, support: 84
+other vegetables, butter milk, support: 102
+whole milk, butter milk, support: 114
+root vegetables, oil, support: 69
+other vegetables, oil, support: 98
+whole milk, oil, support: 111
+whole milk, misc. beverages, support: 69
+misc. beverages, soda, support: 72
+other vegetables, frozen meals, support: 74
+whole milk, frozen meals, support: 97
+candy, other vegetables, support: 68
+candy, rolls/buns, support: 70
+candy, whole milk, support: 81
+candy, soda, support: 85
+soda, specialty chocolate, support: 62
+whole milk, specialty chocolate, support: 79
+onions, rolls/buns, support: 67
+yogurt, onions, support: 71
+onions, root vegetables, support: 93
+onions, whole milk, support: 119
+other vegetables, onions, support: 140
+hygiene articles, tropical fruit, support: 66
+hygiene articles, soda, support: 69
+hygiene articles, yogurt, support: 72
+hygiene articles, other vegetables, support: 94
+hygiene articles, whole milk, support: 126
+hamburger meat, yogurt, support: 64
+hamburger meat, rolls/buns, support: 85
+hamburger meat, other vegetables, support: 136
+hamburger meat, whole milk, support: 145
+berries, rolls/buns, support: 65
+root vegetables, berries, support: 65
+tropical fruit, berries, support: 66
+berries, soda, support: 72
+whipped/sour cream, berries, support: 89
+other vegetables, berries, support: 101
+yogurt, berries, support: 104
+whole milk, berries, support: 116
+UHT-milk, rolls/buns, support: 63
+UHT-milk, bottled water, support: 72
+UHT-milk, yogurt, support: 73
+UHT-milk, soda, support: 75
+UHT-milk, other vegetables, support: 80
+sugar, root vegetables, support: 63
+yogurt, sugar, support: 68
+sugar, rolls/buns, support: 69
+sugar, soda, support: 72
+other vegetables, sugar, support: 106
+sugar, whole milk, support: 148
+tropical fruit, dessert, support: 62
+dessert, rolls/buns, support: 67
+yogurt, dessert, support: 97
+dessert, soda, support: 97
+other vegetables, dessert, support: 114
+whole milk, dessert, support: 135
+tropical fruit, long life bakery product, support: 62
+long life bakery product, soda, support: 75
+long life bakery product, rolls/buns, support: 78
+yogurt, long life bakery product, support: 86
+other vegetables, long life bakery product, support: 105
+whole milk, long life bakery product, support: 133
+salty snack, soda, support: 92
+salty snack, other vegetables, support: 106
+salty snack, whole milk, support: 110
+waffles, root vegetables, support: 65
+waffles, pastry, support: 69
+yogurt, waffles, support: 74
+waffles, rolls/buns, support: 90
+waffles, soda, support: 94
+waffles, other vegetables, support: 99
+waffles, whole milk, support: 125
+cream cheese , whipped/sour cream, support: 63
+cream cheese , soda, support: 67
+tropical fruit, cream cheese , support: 71
+root vegetables, cream cheese , support: 74
+cream cheese , rolls/buns, support: 98
+yogurt, cream cheese , support: 122
+other vegetables, cream cheese , support: 135
+whole milk, cream cheese , support: 162
+white bread, rolls/buns, support: 64
+pip fruit, white bread, support: 65
+sausage, white bread, support: 71
+fruit/vegetable juice, white bread, support: 73
+shopping bags, white bread, support: 73
+root vegetables, white bread, support: 78
+tropical fruit, white bread, support: 86
+yogurt, white bread, support: 89
+white bread, soda, support: 101
+other vegetables, white bread, support: 135
+whole milk, white bread, support: 168
+chicken, tropical fruit, support: 63
+chicken, frozen vegetables, support: 66
+chicken, citrus fruit, support: 68
+chicken, whipped/sour cream, support: 71
+chicken, yogurt, support: 82
+chicken, soda, support: 82
+chicken, rolls/buns, support: 95
+chicken, root vegetables, support: 107
+chicken, whole milk, support: 173
+chicken, other vegetables, support: 176
+frozen vegetables, pork, support: 63
+citrus fruit, frozen vegetables, support: 65
+pip fruit, frozen vegetables, support: 72
+fruit/vegetable juice, frozen vegetables, support: 77
+whipped/sour cream, frozen vegetables, support: 78
+frozen vegetables, soda, support: 85
+tropical fruit, frozen vegetables, support: 86
+frozen vegetables, rolls/buns, support: 100
+root vegetables, frozen vegetables, support: 114
+yogurt, frozen vegetables, support: 122
+other vegetables, frozen vegetables, support: 175
+whole milk, frozen vegetables, support: 201
+citrus fruit, chocolate, support: 63
+root vegetables, chocolate, support: 63
+sausage, chocolate, support: 65
+fruit/vegetable juice, chocolate, support: 67
+pastry, chocolate, support: 79
+tropical fruit, chocolate, support: 80
+shopping bags, chocolate, support: 80
+yogurt, chocolate, support: 91
+rolls/buns, chocolate, support: 116
+other vegetables, chocolate, support: 125
+soda, chocolate, support: 133
+whole milk, chocolate, support: 164
+sausage, napkins, support: 66
+pip fruit, napkins, support: 66
+fruit/vegetable juice, napkins, support: 68
+pastry, napkins, support: 69
+napkins, shopping bags, support: 71
+napkins, whipped/sour cream, support: 71
+citrus fruit, napkins, support: 75
+bottled water, napkins, support: 85
+root vegetables, napkins, support: 98
+tropical fruit, napkins, support: 99
+napkins, rolls/buns, support: 115
+napkins, soda, support: 118
+yogurt, napkins, support: 121
+other vegetables, napkins, support: 142
+whole milk, napkins, support: 194
+beef, pastry, support: 62
+beef, newspapers, support: 63
+beef, whipped/sour cream, support: 66
+beef, pork, support: 75
+tropical fruit, beef, support: 75
+beef, soda, support: 80
+citrus fruit, beef, support: 83
+yogurt, beef, support: 115
+beef, rolls/buns, support: 134
+beef, root vegetables, support: 171
+other vegetables, beef, support: 194
+beef, whole milk, support: 209
+curd, margarine, support: 62
+curd, domestic eggs, support: 64
+curd, butter, support: 67
+citrus fruit, curd, support: 70
+curd, pastry, support: 74
+sausage, curd, support: 75
+curd, pip fruit, support: 77
+curd, soda, support: 80
+curd, rolls/buns, support: 99
+curd, tropical fruit, support: 101
+curd, whipped/sour cream, support: 103
+curd, root vegetables, support: 107
+curd, other vegetables, support: 169
+curd, yogurt, support: 170
+curd, whole milk, support: 257
+butter, margarine, support: 66
+pip fruit, butter, support: 72
+butter, pastry, support: 75
+butter, fruit/vegetable juice, support: 79
+sausage, butter, support: 85
+butter, soda, support: 87
+bottled water, butter, support: 88
+citrus fruit, butter, support: 90
+butter, domestic eggs, support: 95
+tropical fruit, butter, support: 98
+butter, whipped/sour cream, support: 100
+butter, root vegetables, support: 127
+butter, rolls/buns, support: 132
+yogurt, butter, support: 144
+other vegetables, butter, support: 197
+butter, whole milk, support: 271
+pastry, pork, support: 62
+pork, margarine, support: 63
+shopping bags, pork, support: 63
+citrus fruit, pork, support: 64
+sausage, pork, support: 64
+pork, newspapers, support: 65
+bottled water, pork, support: 73
+whipped/sour cream, pork, support: 81
+tropical fruit, pork, support: 84
+yogurt, pork, support: 94
+rolls/buns, pork, support: 111
+soda, pork, support: 117
+root vegetables, pork, support: 134
+other vegetables, pork, support: 213
+whole milk, pork, support: 218
+citrus fruit, coffee, support: 63
+pastry, coffee, support: 68
+sausage, coffee, support: 68
+pip fruit, coffee, support: 68
+tropical fruit, coffee, support: 70
+root vegetables, coffee, support: 72
+bottled water, coffee, support: 72
+shopping bags, coffee, support: 92
+yogurt, coffee, support: 96
+coffee, soda, support: 98
+coffee, rolls/buns, support: 108
+other vegetables, coffee, support: 132
+whole milk, coffee, support: 184
+frankfurter, margarine, support: 63
+brown bread, margarine, support: 64
+pastry, margarine, support: 67
+whipped/sour cream, margarine, support: 67
+newspapers, margarine, support: 70
+sausage, margarine, support: 70
+citrus fruit, margarine, support: 78
+domestic eggs, margarine, support: 82
+pip fruit, margarine, support: 84
+tropical fruit, margarine, support: 92
+soda, margarine, support: 100
+bottled water, margarine, support: 101
+root vegetables, margarine, support: 109
+yogurt, margarine, support: 140
+rolls/buns, margarine, support: 145
+other vegetables, margarine, support: 194
+whole milk, margarine, support: 238
+citrus fruit, frankfurter, support: 64
+domestic eggs, frankfurter, support: 69
+brown bread, frankfurter, support: 70
+pip fruit, frankfurter, support: 71
+bottled water, frankfurter, support: 72
+shopping bags, frankfurter, support: 81
+pastry, frankfurter, support: 82
+tropical fruit, frankfurter, support: 93
+sausage, frankfurter, support: 99
+root vegetables, frankfurter, support: 100
+yogurt, frankfurter, support: 110
+soda, frankfurter, support: 111
+other vegetables, frankfurter, support: 162
+rolls/buns, frankfurter, support: 189
+whole milk, frankfurter, support: 202
+domestic eggs, brown bread, support: 67
+domestic eggs, newspapers, support: 68
+fruit/vegetable juice, domestic eggs, support: 79
+pip fruit, domestic eggs, support: 85
+pastry, domestic eggs, support: 89
+domestic eggs, shopping bags, support: 89
+bottled water, domestic eggs, support: 90
+sausage, domestic eggs, support: 94
+domestic eggs, whipped/sour cream, support: 98
+citrus fruit, domestic eggs, support: 102
+tropical fruit, domestic eggs, support: 112
+domestic eggs, soda, support: 122
+yogurt, domestic eggs, support: 141
+root vegetables, domestic eggs, support: 141
+domestic eggs, rolls/buns, support: 154
+other vegetables, domestic eggs, support: 219
+whole milk, domestic eggs, support: 295
+brown bread, newspapers, support: 75
+pip fruit, brown bread, support: 75
+bottled water, brown bread, support: 81
+fruit/vegetable juice, brown bread, support: 82
+citrus fruit, brown bread, support: 82
+shopping bags, brown bread, support: 91
+pastry, brown bread, support: 95
+root vegetables, brown bread, support: 100
+tropical fruit, brown bread, support: 105
+sausage, brown bread, support: 105
+brown bread, soda, support: 124
+brown bread, rolls/buns, support: 124
+yogurt, brown bread, support: 143
+other vegetables, brown bread, support: 184
+whole milk, brown bread, support: 248
+whipped/sour cream, newspapers, support: 71
+pastry, whipped/sour cream, support: 74
+whipped/sour cream, shopping bags, support: 78
+bottled water, whipped/sour cream, support: 86
+fruit/vegetable juice, whipped/sour cream, support: 89
+sausage, whipped/sour cream, support: 89
+pip fruit, whipped/sour cream, support: 91
+citrus fruit, whipped/sour cream, support: 107
+whipped/sour cream, soda, support: 114
+tropical fruit, whipped/sour cream, support: 136
+whipped/sour cream, rolls/buns, support: 144
+root vegetables, whipped/sour cream, support: 168
+yogurt, whipped/sour cream, support: 204
+other vegetables, whipped/sour cream, support: 284
+whole milk, whipped/sour cream, support: 317
+bottled beer, fruit/vegetable juice, support: 69
+fruit/vegetable juice, newspapers, support: 81
+fruit/vegetable juice, pastry, support: 84
+pip fruit, fruit/vegetable juice, support: 94
+sausage, fruit/vegetable juice, support: 99
+citrus fruit, fruit/vegetable juice, support: 102
+fruit/vegetable juice, shopping bags, support: 105
+fruit/vegetable juice, root vegetables, support: 118
+tropical fruit, fruit/vegetable juice, support: 135
+bottled water, fruit/vegetable juice, support: 140
+fruit/vegetable juice, rolls/buns, support: 143
+fruit/vegetable juice, soda, support: 181
+yogurt, fruit/vegetable juice, support: 184
+other vegetables, fruit/vegetable juice, support: 207
+fruit/vegetable juice, whole milk, support: 262
+pip fruit, newspapers, support: 66
+pip fruit, shopping bags, support: 92
+bottled water, pip fruit, support: 104
+pip fruit, pastry, support: 105
+sausage, pip fruit, support: 106
+pip fruit, soda, support: 131
+citrus fruit, pip fruit, support: 136
+pip fruit, rolls/buns, support: 137
+pip fruit, root vegetables, support: 153
+yogurt, pip fruit, support: 177
+pip fruit, tropical fruit, support: 201
+pip fruit, other vegetables, support: 257
+pip fruit, whole milk, support: 296
+sausage, canned beer, support: 62
+bottled water, canned beer, support: 79
+canned beer, whole milk, support: 87
+canned beer, other vegetables, support: 89
+canned beer, rolls/buns, support: 111
+canned beer, shopping bags, support: 112
+canned beer, soda, support: 136
+shopping bags, newspapers, support: 68
+sausage, newspapers, support: 79
+citrus fruit, newspapers, support: 82
+pastry, newspapers, support: 83
+bottled water, newspapers, support: 111
+root vegetables, newspapers, support: 113
+tropical fruit, newspapers, support: 116
+soda, newspapers, support: 144
+yogurt, newspapers, support: 151
+other vegetables, newspapers, support: 190
+rolls/buns, newspapers, support: 194
+whole milk, newspapers, support: 269
+sausage, bottled beer, support: 77
+bottled beer, tropical fruit, support: 81
+bottled beer, yogurt, support: 91
+bottled beer, root vegetables, support: 95
+bottled beer, rolls/buns, support: 134
+bottled beer, bottled water, support: 155
+bottled beer, other vegetables, support: 159
+bottled beer, soda, support: 167
+bottled beer, whole milk, support: 201
+citrus fruit, pastry, support: 96
+citrus fruit, shopping bags, support: 96
+sausage, citrus fruit, support: 111
+citrus fruit, soda, support: 126
+citrus fruit, bottled water, support: 133
+citrus fruit, rolls/buns, support: 165
+citrus fruit, root vegetables, support: 174
+citrus fruit, tropical fruit, support: 196
+citrus fruit, yogurt, support: 213
+citrus fruit, other vegetables, support: 284
+citrus fruit, whole milk, support: 300
+bottled water, pastry, support: 88
+root vegetables, pastry, support: 108
+pastry, shopping bags, support: 117
+sausage, pastry, support: 123
+tropical fruit, pastry, support: 130
+yogurt, pastry, support: 174
+pastry, rolls/buns, support: 206
+pastry, soda, support: 207
+other vegetables, pastry, support: 222
+whole milk, pastry, support: 327
+sausage, bottled water, support: 118
+sausage, tropical fruit, support: 137
+sausage, root vegetables, support: 147
+sausage, shopping bags, support: 154
+sausage, yogurt, support: 193
+sausage, soda, support: 239
+sausage, other vegetables, support: 265
+sausage, whole milk, support: 294
+sausage, rolls/buns, support: 301
+bottled water, shopping bags, support: 108
+root vegetables, shopping bags, support: 126
+tropical fruit, shopping bags, support: 133
+yogurt, shopping bags, support: 150
+shopping bags, rolls/buns, support: 192
+other vegetables, shopping bags, support: 228
+whole milk, shopping bags, support: 241
+shopping bags, soda, support: 242
+bottled water, tropical fruit, support: 182
+tropical fruit, soda, support: 205
+tropical fruit, root vegetables, support: 207
+tropical fruit, rolls/buns, support: 242
+yogurt, tropical fruit, support: 288
+tropical fruit, other vegetables, support: 353
+tropical fruit, whole milk, support: 416
+bottled water, root vegetables, support: 154
+root vegetables, soda, support: 183
+root vegetables, rolls/buns, support: 239
+yogurt, root vegetables, support: 254
+other vegetables, root vegetables, support: 466
+root vegetables, whole milk, support: 481
+yogurt, bottled water, support: 226
+bottled water, rolls/buns, support: 238
+bottled water, other vegetables, support: 244
+bottled water, soda, support: 285
+bottled water, whole milk, support: 338
+yogurt, soda, support: 269
+yogurt, rolls/buns, support: 338
+yogurt, other vegetables, support: 427
+yogurt, whole milk, support: 551
+other vegetables, soda, support: 322
+rolls/buns, soda, support: 377
+whole milk, soda, support: 394
+other vegetables, rolls/buns, support: 419
+whole milk, rolls/buns, support: 557
+other vegetables, whole milk, support: 736
+
+Including 140 3-item frequent set
+other vegetables, onions, whole milk, support: 65
+hamburger meat, other vegetables, whole milk, support: 62
+other vegetables, sugar, whole milk, support: 62
+yogurt, whole milk, cream cheese , support: 65
+other vegetables, whole milk, cream cheese , support: 66
+chicken, other vegetables, whole milk, support: 83
+other vegetables, whole milk, frozen vegetables, support: 95
+other vegetables, whole milk, napkins, support: 67
+beef, whole milk, rolls/buns, support: 67
+other vegetables, beef, root vegetables, support: 78
+beef, whole milk, root vegetables, support: 79
+other vegetables, beef, whole milk, support: 91
+curd, tropical fruit, whole milk, support: 64
+curd, other vegetables, whole milk, support: 97
+curd, whole milk, yogurt, support: 99
+whole milk, butter, whipped/sour cream, support: 66
+other vegetables, butter, root vegetables, support: 65
+butter, whole milk, root vegetables, support: 81
+butter, whole milk, rolls/buns, support: 65
+yogurt, other vegetables, butter, support: 63
+yogurt, butter, whole milk, support: 92
+other vegetables, butter, whole milk, support: 113
+root vegetables, whole milk, pork, support: 67
+other vegetables, root vegetables, pork, support: 69
+other vegetables, whole milk, pork, support: 100
+other vegetables, whole milk, coffee, support: 63
+yogurt, whole milk, margarine, support: 69
+whole milk, rolls/buns, margarine, support: 78
+other vegetables, whole milk, margarine, support: 91
+other vegetables, whole milk, frankfurter, support: 75
+tropical fruit, whole milk, domestic eggs, support: 68
+yogurt, whole milk, domestic eggs, support: 76
+other vegetables, root vegetables, domestic eggs, support: 72
+whole milk, root vegetables, domestic eggs, support: 84
+whole milk, domestic eggs, rolls/buns, support: 65
+other vegetables, whole milk, domestic eggs, support: 121
+yogurt, whole milk, brown bread, support: 70
+other vegetables, whole milk, brown bread, support: 92
+citrus fruit, whole milk, whipped/sour cream, support: 62
+tropical fruit, whipped/sour cream, other vegetables, support: 77
+tropical fruit, whole milk, whipped/sour cream, support: 78
+other vegetables, whipped/sour cream, rolls/buns, support: 66
+whole milk, whipped/sour cream, rolls/buns, support: 77
+yogurt, root vegetables, whipped/sour cream, support: 63
+other vegetables, root vegetables, whipped/sour cream, support: 84
+whole milk, root vegetables, whipped/sour cream, support: 93
+yogurt, other vegetables, whipped/sour cream, support: 100
+yogurt, whole milk, whipped/sour cream, support: 107
+other vegetables, whole milk, whipped/sour cream, support: 144
+fruit/vegetable juice, whole milk, root vegetables, support: 64
+other vegetables, fruit/vegetable juice, root vegetables, support: 65
+tropical fruit, fruit/vegetable juice, other vegetables, support: 65
+yogurt, other vegetables, fruit/vegetable juice, support: 81
+yogurt, fruit/vegetable juice, whole milk, support: 93
+other vegetables, fruit/vegetable juice, whole milk, support: 103
+pip fruit, root vegetables, other vegetables, support: 80
+pip fruit, root vegetables, whole milk, support: 88
+yogurt, pip fruit, tropical fruit, support: 63
+yogurt, pip fruit, other vegetables, support: 80
+yogurt, pip fruit, whole milk, support: 94
+pip fruit, whole milk, tropical fruit, support: 83
+pip fruit, other vegetables, tropical fruit, support: 93
+pip fruit, whole milk, other vegetables, support: 133
+yogurt, whole milk, newspapers, support: 65
+other vegetables, whole milk, newspapers, support: 82
+whole milk, rolls/buns, newspapers, support: 75
+bottled beer, other vegetables, whole milk, support: 75
+citrus fruit, whole milk, rolls/buns, support: 71
+citrus fruit, root vegetables, whole milk, support: 90
+citrus fruit, other vegetables, root vegetables, support: 102
+citrus fruit, tropical fruit, yogurt, support: 62
+citrus fruit, tropical fruit, whole milk, support: 89
+citrus fruit, tropical fruit, other vegetables, support: 89
+citrus fruit, other vegetables, yogurt, support: 75
+citrus fruit, whole milk, yogurt, support: 101
+citrus fruit, other vegetables, whole milk, support: 128
+tropical fruit, whole milk, pastry, support: 66
+yogurt, other vegetables, pastry, support: 65
+yogurt, whole milk, pastry, support: 90
+whole milk, pastry, rolls/buns, support: 84
+whole milk, pastry, soda, support: 81
+other vegetables, whole milk, pastry, support: 104
+sausage, tropical fruit, whole milk, support: 71
+sausage, other vegetables, root vegetables, support: 67
+sausage, root vegetables, whole milk, support: 76
+sausage, yogurt, other vegetables, support: 80
+sausage, yogurt, whole milk, support: 86
+sausage, whole milk, soda, support: 66
+sausage, other vegetables, soda, support: 71
+sausage, rolls/buns, soda, support: 95
+sausage, other vegetables, rolls/buns, support: 87
+sausage, other vegetables, whole milk, support: 100
+sausage, whole milk, rolls/buns, support: 92
+other vegetables, root vegetables, shopping bags, support: 65
+soda, shopping bags, rolls/buns, support: 62
+other vegetables, whole milk, shopping bags, support: 75
+whole milk, shopping bags, soda, support: 67
+bottled water, tropical fruit, yogurt, support: 70
+bottled water, tropical fruit, whole milk, support: 79
+yogurt, tropical fruit, soda, support: 65
+tropical fruit, other vegetables, soda, support: 71
+tropical fruit, whole milk, soda, support: 77
+yogurt, tropical fruit, root vegetables, support: 80
+tropical fruit, root vegetables, whole milk, support: 118
+tropical fruit, root vegetables, other vegetables, support: 121
+other vegetables, tropical fruit, rolls/buns, support: 77
+yogurt, tropical fruit, rolls/buns, support: 86
+tropical fruit, whole milk, rolls/buns, support: 108
+yogurt, tropical fruit, other vegetables, support: 121
+yogurt, tropical fruit, whole milk, support: 149
+tropical fruit, whole milk, other vegetables, support: 168
+bottled water, root vegetables, other vegetables, support: 69
+bottled water, root vegetables, whole milk, support: 72
+root vegetables, whole milk, soda, support: 80
+other vegetables, root vegetables, soda, support: 81
+yogurt, root vegetables, rolls/buns, support: 71
+other vegetables, root vegetables, rolls/buns, support: 120
+root vegetables, whole milk, rolls/buns, support: 125
+yogurt, other vegetables, root vegetables, support: 127
+yogurt, root vegetables, whole milk, support: 143
+other vegetables, root vegetables, whole milk, support: 228
+yogurt, bottled water, rolls/buns, support: 70
+yogurt, bottled water, soda, support: 73
+yogurt, bottled water, other vegetables, support: 80
+yogurt, bottled water, whole milk, support: 95
+bottled water, rolls/buns, soda, support: 67
+other vegetables, bottled water, rolls/buns, support: 72
+bottled water, whole milk, rolls/buns, support: 86
+bottled water, whole milk, other vegetables, support: 106
+bottled water, whole milk, soda, support: 74
+yogurt, other vegetables, soda, support: 82
+yogurt, rolls/buns, soda, support: 85
+yogurt, whole milk, soda, support: 103
+yogurt, other vegetables, rolls/buns, support: 113
+yogurt, whole milk, rolls/buns, support: 153
+yogurt, other vegetables, whole milk, support: 219
+other vegetables, rolls/buns, soda, support: 97
+other vegetables, whole milk, soda, support: 137
+whole milk, rolls/buns, soda, support: 87
+other vegetables, whole milk, rolls/buns, support: 176
+
+Including 3 4-item frequent set
+tropical fruit, root vegetables, whole milk, other vegetables, support: 69
+yogurt, tropical fruit, whole milk, other vegetables, support: 75
+yogurt, other vegetables, root vegetables, whole milk, support: 77
+

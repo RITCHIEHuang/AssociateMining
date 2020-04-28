@@ -1,0 +1,24 @@
+Find 19 frequent item sets !!!
+Including 18 1-item frequent set
+whipped/sour cream, support: 705
+fruit/vegetable juice, support: 711
+pip fruit, support: 744
+canned beer, support: 764
+newspapers, support: 785
+bottled beer, support: 792
+citrus fruit, support: 814
+pastry, support: 875
+sausage, support: 924
+shopping bags, support: 969
+tropical fruit, support: 1032
+root vegetables, support: 1072
+bottled water, support: 1087
+yogurt, support: 1372
+soda, support: 1715
+rolls/buns, support: 1809
+other vegetables, support: 1903
+whole milk, support: 2513
+
+Including 1 2-item frequent set
+other vegetables, whole milk, support: 736
+

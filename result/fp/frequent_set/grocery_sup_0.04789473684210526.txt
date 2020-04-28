@@ -1,0 +1,39 @@
+Find 34 frequent item sets !!!
+Including 30 1-item frequent set
+frozen vegetables, support: 473
+chocolate, support: 488
+napkins, support: 515
+beef, support: 516
+curd, support: 524
+butter, support: 545
+pork, support: 567
+coffee, support: 571
+margarine, support: 576
+frankfurter, support: 580
+domestic eggs, support: 624
+brown bread, support: 638
+whipped/sour cream, support: 705
+fruit/vegetable juice, support: 711
+pip fruit, support: 744
+canned beer, support: 764
+newspapers, support: 785
+bottled beer, support: 792
+citrus fruit, support: 814
+pastry, support: 875
+sausage, support: 924
+shopping bags, support: 969
+tropical fruit, support: 1032
+root vegetables, support: 1072
+bottled water, support: 1087
+yogurt, support: 1372
+soda, support: 1715
+rolls/buns, support: 1809
+other vegetables, support: 1903
+whole milk, support: 2513
+
+Including 4 2-item frequent set
+root vegetables, whole milk, support: 481
+yogurt, whole milk, support: 551
+whole milk, rolls/buns, support: 557
+other vegetables, whole milk, support: 736
+

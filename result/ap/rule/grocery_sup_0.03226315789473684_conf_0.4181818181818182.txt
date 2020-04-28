@@ -1,0 +1,3 @@
+Find 2 rules !!!
+root vegetables===>other vegetables, confidence: 0.43470149253731344
+root vegetables===>whole milk, confidence: 0.44869402985074625

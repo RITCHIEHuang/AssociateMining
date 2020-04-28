@@ -1,0 +1,6 @@
+Find 5 rules !!!
+root vegetables===>other vegetables, confidence: 0.43470149253731344
+yogurt===>whole milk, confidence: 0.40160349854227406
+root vegetables===>whole milk, confidence: 0.44869402985074625
+tropical fruit===>whole milk, confidence: 0.40310077519379844
+other vegetables===>whole milk, confidence: 0.38675775091960063

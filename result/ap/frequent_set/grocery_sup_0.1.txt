@@ -1,0 +1,11 @@
+Find 8 frequent item sets !!!
+Including 8 1-item frequent set
+bottled water, support: 1087
+other vegetables, support: 1903
+rolls/buns, support: 1809
+root vegetables, support: 1072
+soda, support: 1715
+tropical fruit, support: 1032
+whole milk, support: 2513
+yogurt, support: 1372
+

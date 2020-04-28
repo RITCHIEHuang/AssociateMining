@@ -299,8 +299,9 @@ if __name__ == '__main__':
         for min_sup in tqdm(min_sups):
             t_freq, t_rules = run_single_alg(min_sup=min_sup, min_confs=min_confs, alg=alg,
                                              dataset_func=read_grocery_data, run_rule=record_rule_time_flag)
+            t_freqs.append(t_freq)
+
             if record_rule_time_flag:
-                t_freqs.append(t_freq)
                 df_rule_time = df_rule_time.append(pd.DataFrame({
                     "min support": [min_sup] * len(min_confs),
                     "min confidence": min_confs,

@@ -1,0 +1,2 @@
+Find 1 rules !!!
+root vegetables, tropical fruit, yogurt===>whole milk, confidence: 0.7

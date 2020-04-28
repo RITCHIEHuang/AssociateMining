@@ -1,0 +1,22 @@
+Find 21 rules !!!
+citrus fruit, whipped/sour cream===>whole milk, confidence: 0.5794392523364486
+citrus fruit, root vegetables===>other vegetables, confidence: 0.5862068965517241
+butter, whipped/sour cream===>whole milk, confidence: 0.66
+other vegetables, sugar===>whole milk, confidence: 0.5849056603773585
+domestic eggs, root vegetables===>whole milk, confidence: 0.5957446808510638
+butter, yogurt===>whole milk, confidence: 0.6388888888888888
+tropical fruit, whipped/sour cream===>other vegetables, confidence: 0.5661764705882353
+domestic eggs, tropical fruit===>whole milk, confidence: 0.6071428571428571
+curd, tropical fruit===>whole milk, confidence: 0.6336633663366337
+curd, other vegetables===>whole milk, confidence: 0.5739644970414202
+tropical fruit, whipped/sour cream===>whole milk, confidence: 0.5735294117647058
+butter, other vegetables===>whole milk, confidence: 0.5736040609137056
+other vegetables, root vegetables, tropical fruit===>whole milk, confidence: 0.5702479338842975
+curd, yogurt===>whole milk, confidence: 0.5823529411764706
+root vegetables, tropical fruit, whole milk===>other vegetables, confidence: 0.5847457627118644
+butter, root vegetables===>whole milk, confidence: 0.6377952755905512
+other vegetables, tropical fruit, yogurt===>whole milk, confidence: 0.6198347107438017
+pip fruit, root vegetables===>whole milk, confidence: 0.5751633986928104
+root vegetables, tropical fruit===>other vegetables, confidence: 0.5845410628019324
+other vegetables, root vegetables, yogurt===>whole milk, confidence: 0.6062992125984252
+root vegetables, tropical fruit===>whole milk, confidence: 0.5700483091787439

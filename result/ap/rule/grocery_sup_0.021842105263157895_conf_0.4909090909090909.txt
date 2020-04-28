@@ -1,0 +1,3 @@
+Find 2 rules !!!
+other vegetables, yogurt===>whole milk, confidence: 0.5128805620608899
+butter===>whole milk, confidence: 0.4972477064220184

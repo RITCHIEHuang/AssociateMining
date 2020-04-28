@@ -1,0 +1,2 @@
+Find 1 rules !!!
+other vegetables===>whole milk, confidence: 0.38675775091960063

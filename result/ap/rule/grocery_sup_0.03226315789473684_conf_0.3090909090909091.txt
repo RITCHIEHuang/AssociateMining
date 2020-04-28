@@ -1,0 +1,10 @@
+Find 9 rules !!!
+root vegetables===>other vegetables, confidence: 0.43470149253731344
+yogurt===>whole milk, confidence: 0.40160349854227406
+yogurt===>other vegetables, confidence: 0.3112244897959184
+pastry===>whole milk, confidence: 0.3737142857142857
+root vegetables===>whole milk, confidence: 0.44869402985074625
+other vegetables===>whole milk, confidence: 0.38675775091960063
+bottled water===>whole milk, confidence: 0.3109475620975161
+tropical fruit===>other vegetables, confidence: 0.34205426356589147
+tropical fruit===>whole milk, confidence: 0.40310077519379844

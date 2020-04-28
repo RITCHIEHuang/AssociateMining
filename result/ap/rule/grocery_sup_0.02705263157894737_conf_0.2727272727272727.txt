@@ -1,0 +1,23 @@
+Find 22 rules !!!
+citrus fruit===>whole milk, confidence: 0.36855036855036855
+yogurt===>other vegetables, confidence: 0.3112244897959184
+sausage===>whole milk, confidence: 0.3181818181818182
+pip fruit===>whole milk, confidence: 0.3978494623655914
+newspapers===>whole milk, confidence: 0.34267515923566877
+domestic eggs===>whole milk, confidence: 0.47275641025641024
+root vegetables===>other vegetables, confidence: 0.43470149253731344
+tropical fruit===>yogurt, confidence: 0.27906976744186046
+citrus fruit===>other vegetables, confidence: 0.3488943488943489
+whipped/sour cream===>whole milk, confidence: 0.44964539007092197
+bottled water===>whole milk, confidence: 0.3109475620975161
+other vegetables===>whole milk, confidence: 0.38675775091960063
+pastry===>whole milk, confidence: 0.3737142857142857
+tropical fruit===>whole milk, confidence: 0.40310077519379844
+whole milk===>other vegetables, confidence: 0.29287703939514526
+root vegetables===>whole milk, confidence: 0.44869402985074625
+tropical fruit===>other vegetables, confidence: 0.34205426356589147
+rolls/buns===>whole milk, confidence: 0.30790491984521834
+yogurt===>whole milk, confidence: 0.40160349854227406
+sausage===>rolls/buns, confidence: 0.32575757575757575
+butter===>whole milk, confidence: 0.4972477064220184
+whipped/sour cream===>other vegetables, confidence: 0.40283687943262414

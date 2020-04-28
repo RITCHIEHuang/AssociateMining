@@ -1,0 +1,54 @@
+Find 53 rules !!!
+citrus fruit===>whole milk, confidence: 0.36855036855036855
+beef===>whole milk, confidence: 0.4050387596899225
+yogurt===>other vegetables, confidence: 0.3112244897959184
+margarine===>other vegetables, confidence: 0.3368055555555556
+other vegetables, rolls/buns===>whole milk, confidence: 0.4200477326968974
+whole milk, yogurt===>other vegetables, confidence: 0.397459165154265
+beef===>root vegetables, confidence: 0.3313953488372093
+chocolate===>whole milk, confidence: 0.3360655737704918
+citrus fruit===>other vegetables, confidence: 0.3488943488943489
+bottled water===>whole milk, confidence: 0.3109475620975161
+other vegetables===>whole milk, confidence: 0.38675775091960063
+frozen vegetables===>other vegetables, confidence: 0.3699788583509514
+napkins===>whole milk, confidence: 0.3766990291262136
+butter===>other vegetables, confidence: 0.3614678899082569
+other vegetables, yogurt===>whole milk, confidence: 0.5128805620608899
+tropical fruit, whole milk===>other vegetables, confidence: 0.40384615384615385
+frozen vegetables===>whole milk, confidence: 0.4249471458773784
+other vegetables, tropical fruit===>whole milk, confidence: 0.47592067988668557
+frankfurter===>rolls/buns, confidence: 0.3258620689655172
+sausage===>rolls/buns, confidence: 0.32575757575757575
+butter===>whole milk, confidence: 0.4972477064220184
+whipped/sour cream===>other vegetables, confidence: 0.40283687943262414
+domestic eggs===>other vegetables, confidence: 0.35096153846153844
+rolls/buns, whole milk===>other vegetables, confidence: 0.31597845601436264
+sausage===>whole milk, confidence: 0.3181818181818182
+other vegetables, whole milk===>root vegetables, confidence: 0.30978260869565216
+pip fruit===>whole milk, confidence: 0.3978494623655914
+newspapers===>whole milk, confidence: 0.34267515923566877
+domestic eggs===>whole milk, confidence: 0.47275641025641024
+root vegetables===>other vegetables, confidence: 0.43470149253731344
+whipped/sour cream===>whole milk, confidence: 0.44964539007092197
+fruit/vegetable juice===>whole milk, confidence: 0.36849507735583686
+tropical fruit===>whole milk, confidence: 0.40310077519379844
+pastry===>whole milk, confidence: 0.3737142857142857
+frankfurter===>whole milk, confidence: 0.3482758620689655
+other vegetables, root vegetables===>whole milk, confidence: 0.4892703862660944
+coffee===>whole milk, confidence: 0.3222416812609457
+brown bread===>whole milk, confidence: 0.3887147335423197
+white bread===>whole milk, confidence: 0.4057971014492754
+pip fruit===>other vegetables, confidence: 0.34543010752688175
+root vegetables===>whole milk, confidence: 0.44869402985074625
+tropical fruit===>other vegetables, confidence: 0.34205426356589147
+curd===>whole milk, confidence: 0.4904580152671756
+root vegetables, whole milk===>other vegetables, confidence: 0.47401247401247404
+chicken===>whole milk, confidence: 0.4099526066350711
+pork===>other vegetables, confidence: 0.37566137566137564
+beef===>other vegetables, confidence: 0.375968992248062
+chicken===>other vegetables, confidence: 0.41706161137440756
+pork===>whole milk, confidence: 0.3844797178130511
+yogurt===>whole milk, confidence: 0.40160349854227406
+curd===>other vegetables, confidence: 0.32251908396946566
+curd===>yogurt, confidence: 0.3244274809160305
+margarine===>whole milk, confidence: 0.4131944444444444

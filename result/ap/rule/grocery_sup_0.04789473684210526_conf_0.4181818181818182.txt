@@ -1,0 +1,2 @@
+Find 1 rules !!!
+root vegetables===>whole milk, confidence: 0.44869402985074625

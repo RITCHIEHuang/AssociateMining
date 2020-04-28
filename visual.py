@@ -1,8 +1,8 @@
 #!/usr/bin/env python
 # Created at 2020/4/28
 
-import pandas as pd
 import matplotlib.pyplot as plt
+import pandas as pd
 import seaborn as sns
 
 sns.set(style='darkgrid')
@@ -13,9 +13,12 @@ COL = 4
 ROW = 5
 
 fig, axes = plt.subplots(ROW, COL, figsize=(6 * COL, 4 * ROW))
+for idx, min_sup in enumerate(df["min support"].unique()):
+    sub_df = df[df["min support"] == min_sup]
+    ax = axes[idx // COL][idx % COL]
+    ax.set_title(f"Min support = {min_sup:.3f}")
+    sns.lineplot(data=sub_df, x="min confidence", y="running time", ci='sd', ax=ax)
 
-for k in range(20):
-    ax = axes[k // COL][k % COL]
-    sns.lineplot(data=data, x=x_axis, y=y_axis, hue=hue, ci='sd', ax=ax, **kwargs)
 
-
+# sns.lineplot(x="min confidence", y="running time", hue="min support", data=df)
+plt.show()

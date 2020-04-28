@@ -41,27 +41,32 @@ def run_single_alg(min_sup=0.01, min_confs=(0.3,), output_dir="./result/", debug
 
     time_start = time.time()
     alg_freq_item_sets = ALGO_MAP[alg](df, items, item_counts, min_sup=min_sup, debug=debug)
+    freq_item_num = sum(map(lambda a: len(a), alg_freq_item_sets.values()))
+
     alg_time_cost = time.time() - time_start
 
-    print(f"{alg} spent {alg_time_cost: .5f} s for mining dataset: {data_set_name} frequent item sets.")
+    print(
+        f"{alg} spent {alg_time_cost: .5f} s for mining dataset: {data_set_name} for {freq_item_num} frequent item sets.")
 
     print("=" * 100)
     write_frequent_item_set_to_file(alg_freq_item_sets,
                                     file_path=f"{output_dir}{alg}/frequent_set/{data_set_name}_sup_{min_sup}.txt")
 
+    rule_nums = []
     rule_time_costs = []
     if run_rule:
         for min_conf in min_confs:
             alg_strong_rules, rule_time_cost = generate_strong_rule(min_conf, df, alg_freq_item_sets, debug=debug)
+            rule_nums.append(len(alg_strong_rules))
             rule_time_costs.append(rule_time_cost)
             print(
-                f"Strong rules generation spent {rule_time_cost: .5f} s on dataset: {data_set_name}, support: {min_sup}, confidence: {min_conf}.")
+                f"{len(alg_strong_rules)} strong rules generation spent {rule_time_cost: .5f} s on dataset: {data_set_name}, support: {min_sup}, confidence: {min_conf}.")
 
             write_rule_to_file(alg_strong_rules,
                                file_path=f"{output_dir}{alg}/rule/{data_set_name}_sup_{min_sup}_conf_{min_conf}.txt")
     print("*" * 100)
     print()
-    return alg_time_cost, rule_time_costs
+    return freq_item_num, alg_time_cost, rule_nums, rule_time_costs
 
 
 def test(output_dir="./result/", debug=False):
@@ -291,38 +296,47 @@ if __name__ == '__main__':
     min_confs = np.linspace(0.2, 0.6, 12)
 
     algs = ['ap', 'fp']
-    df_alg_time = pd.DataFrame(columns=["algorithm", "min support", "running time"])
-    df_rule_time = pd.DataFrame(columns=["min support", "min confidence", "running time"])
+    df_alg = pd.DataFrame(columns=["algorithm", "min support", "freq_set nums", "running time"])
+    df_rule = pd.DataFrame(columns=["min support", "min confidence", "rule nums", "running time"])
     record_rule_time_flag = True
     for alg in algs:
         t_freqs = []
+        n_freqs = []
         for min_sup in tqdm(min_sups):
-            t_freq, t_rules = run_single_alg(min_sup=min_sup, min_confs=min_confs, alg=alg,
-                                             dataset_func=read_grocery_data, run_rule=record_rule_time_flag)
+            n_freq, t_freq, n_rules, t_rule_costs = run_single_alg(min_sup=min_sup, min_confs=min_confs, alg=alg,
+                                                                     dataset_func=read_grocery_data,
+                                                                     run_rule=record_rule_time_flag)
             t_freqs.append(t_freq)
+            n_freqs.append(n_freq)
 
             if record_rule_time_flag:
-                df_rule_time = df_rule_time.append(pd.DataFrame({
+                df_rule = df_rule.append(pd.DataFrame({
                     "min support": [min_sup] * len(min_confs),
                     "min confidence": min_confs,
-                    "running time": t_rules
+                    "rule nums": n_rules,
+                    "running time": t_rule_costs
                 }))
 
-        df_alg_time = df_alg_time.append(pd.DataFrame({
+        df_alg = df_alg.append(pd.DataFrame({
+            "freq_set nums": n_freqs,
             "min support": min_sups,
             "algorithm": ["Apriori" if alg == 'ap' else "FP-growth"] * len(min_sups),
             "running time": t_freqs})
         )
         record_rule_time_flag = False
 
-    df_alg_time.to_csv("algorithm_time_cost.csv")
-    df_rule_time.to_csv("rules_time_cost.csv")
+    df_alg.to_csv("df_algorithm.csv")
+    df_rule.to_csv("df_rule.csv")
 
-    sns.lineplot(x="min support", y="running time", hue='algorithm', data=df_alg_time)
+    sns.lineplot(x="min support", y="running time", hue='algorithm', data=df_alg)
+    sns.lineplot(x="min support", y="freq_set nums", data=df_alg)
 
-    g = sns.FacetGrid(df_rule_time, col="min support", col_wrap=5)
-    g.map(sns.lineplot, "min confidence", "running time")
-    # sns.lineplot(x="min confidence", y="running time", hue="min support", data=df_rule_time)
+    g = sns.FacetGrid(df_rule, col="min support", col_wrap=5)
+    g.map(sns.lineplot, "min confidence", "rule nums")
+
+    sns.lineplot(x="min confidence", y="running time", hue="min support", data=df_rule)
+    sns.lineplot(x="min confidence", y="rule nums", hue="min support", data=df_rule)
+
     plt.show()
 
     # t_freq, t_rules = run_single_alg(min_sup=0.01, min_confs=(0.5,), alg='fp',

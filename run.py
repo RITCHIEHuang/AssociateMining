@@ -13,7 +13,7 @@ from fp_growth.fp_growth import fp_growth_frequent_items
 from gen_strong_rule import generate_strong_rule
 
 GROCERY_STORE_DATA_PATH = "./dataset/GroceryStore/Groceries.csv"
-UNIX_COMMAND_DATA_PATH = "./dataset/Unix_usage/"
+UNIX_COMMAND_DATA_PATH = "./dataset/UNIX_usage/"
 
 
 def test(output_dir="./result/"):
@@ -110,8 +110,8 @@ def main(output_dir="./result/"):
     """data sets"""
     grocery_data_collect_func = partial(read_grocery_data, dataset_path=GROCERY_STORE_DATA_PATH)
     unix_commands_data_collect_func = partial(read_unix_commands_data, dataset_path=UNIX_COMMAND_DATA_PATH)
-    data_funcs = [('grocery', grocery_data_collect_func), ('unix_usage', unix_commands_data_collect_func)]
-
+    data_funcs = [('unix_usage', unix_commands_data_collect_func)]
+    # ('grocery', grocery_data_collect_func)
     record_df = pd.DataFrame(
         columns=['min_sup', 'min_conf', 'data_set', 'num_items', 'num_transactions', 'algo', 'time'])
 
@@ -141,7 +141,7 @@ def main(output_dir="./result/"):
             ap_time_cost = time.time() - time_start
             print(f"Apriori spent {ap_time_cost} s for mining frequent item sets.")
             write_frequent_item_set_to_file(ap_frequent_item_sets,
-                                            file_path=f"{output_dir}ap/frequent_set/sup_{min_sup}.txt")
+                                            file_path=f"{output_dir}ap/frequent_set/{data_set}_sup_{min_sup}.txt")
 
             for min_conf in min_confs:
                 print("=" * 150)
@@ -153,7 +153,7 @@ def main(output_dir="./result/"):
 
                 ap_strong_rules = generate_strong_rule(min_conf, df, ap_frequent_item_sets)
                 write_rule_to_file(ap_strong_rules,
-                                   file_path=f"{output_dir}ap/rule/sup_{min_sup}_conf_{min_conf}.txt")
+                                   file_path=f"{output_dir}ap/rule/{data_set}_sup_{min_sup}_conf_{min_conf}.txt")
 
                 record_df = record_df.append(pd.Series(
                     {"min_sup": min_sup, "min_conf": min_conf, "data_set": data_set, "num_items": item_counts,

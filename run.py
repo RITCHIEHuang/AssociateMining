@@ -223,4 +223,4 @@ if __name__ == '__main__':
                        file_path=f"{output_dir}fp/rule/sup_{min_support}_conf_{min_confidence}.txt")
 
     """
-    test(output_dir="./result/")
+    main(output_dir="./result/")

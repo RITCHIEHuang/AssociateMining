@@ -288,7 +288,7 @@ if __name__ == '__main__':
 
     algs = ['ap', 'fp']
     df_alg_time = pd.DataFrame(columns=["algorithm", "min support", "running time"])
-    df_rule_time = pd.DataFrame(columns=["algorithm", "min support", "min confidence", "running time"])
+    df_rule_time = pd.DataFrame(columns=["min support", "min confidence", "running time"])
     record_rule_time_flag = True
     for alg in algs:
         t_freqs = []
@@ -298,7 +298,6 @@ if __name__ == '__main__':
             if record_rule_time_flag:
                 t_freqs.append(t_freq)
                 df_rule_time = df_rule_time.append(pd.DataFrame({
-                    "algorithm": ["Apriori" if alg == 'ap' else "FP-growth"] * len(min_confs),
                     "min support": [min_sup] * len(min_confs),
                     "min confidence": min_confs,
                     "running time": t_rules

@@ -304,8 +304,8 @@ if __name__ == '__main__':
         n_freqs = []
         for min_sup in tqdm(min_sups):
             n_freq, t_freq, n_rules, t_rule_costs = run_single_alg(min_sup=min_sup, min_confs=min_confs, alg=alg,
-                                                                     dataset_func=read_grocery_data,
-                                                                     run_rule=record_rule_time_flag)
+                                                                   dataset_func=read_grocery_data,
+                                                                   run_rule=record_rule_time_flag)
             t_freqs.append(t_freq)
             n_freqs.append(n_freq)
 

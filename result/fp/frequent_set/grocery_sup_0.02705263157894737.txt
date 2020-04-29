@@ -54,29 +54,29 @@ whole milk, support: 2513
 Including 28 2-item frequent set
 butter, whole milk, support: 271
 whole milk, domestic eggs, support: 295
-other vegetables, whipped/sour cream, support: 284
-whole milk, whipped/sour cream, support: 317
-pip fruit, whole milk, support: 296
-whole milk, newspapers, support: 269
+whipped/sour cream, other vegetables, support: 284
+whipped/sour cream, whole milk, support: 317
+whole milk, pip fruit, support: 296
+newspapers, whole milk, support: 269
 citrus fruit, other vegetables, support: 284
 citrus fruit, whole milk, support: 300
 whole milk, pastry, support: 327
 sausage, whole milk, support: 294
 sausage, rolls/buns, support: 301
-yogurt, tropical fruit, support: 288
-tropical fruit, other vegetables, support: 353
-tropical fruit, whole milk, support: 416
+tropical fruit, yogurt, support: 288
+other vegetables, tropical fruit, support: 353
+whole milk, tropical fruit, support: 416
 other vegetables, root vegetables, support: 466
 root vegetables, whole milk, support: 481
-bottled water, soda, support: 285
-bottled water, whole milk, support: 338
-yogurt, soda, support: 269
-yogurt, rolls/buns, support: 338
-yogurt, other vegetables, support: 427
-yogurt, whole milk, support: 551
+soda, bottled water, support: 285
+whole milk, bottled water, support: 338
+soda, yogurt, support: 269
+rolls/buns, yogurt, support: 338
+other vegetables, yogurt, support: 427
+whole milk, yogurt, support: 551
 other vegetables, soda, support: 322
-rolls/buns, soda, support: 377
-whole milk, soda, support: 394
+soda, rolls/buns, support: 377
+soda, whole milk, support: 394
 other vegetables, rolls/buns, support: 419
 whole milk, rolls/buns, support: 557
 other vegetables, whole milk, support: 736

@@ -1,7 +1,7 @@
 Find 6 rules !!!
+other vegetables===>whole milk, confidence: 0.38675775091960063
+tropical fruit===>whole milk, confidence: 0.40310077519379844
+root vegetables===>whole milk, confidence: 0.44869402985074625
 root vegetables===>other vegetables, confidence: 0.43470149253731344
 yogurt===>whole milk, confidence: 0.40160349854227406
 yogurt===>other vegetables, confidence: 0.3112244897959184
-root vegetables===>whole milk, confidence: 0.44869402985074625
-other vegetables===>whole milk, confidence: 0.38675775091960063
-tropical fruit===>whole milk, confidence: 0.40310077519379844

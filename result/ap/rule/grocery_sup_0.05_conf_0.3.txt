@@ -1,4 +1,0 @@
-Find 3 rules !!!
-other vegetables===>whole milk, confidence: 0.38675775091960063
-yogurt===>whole milk, confidence: 0.40160349854227406
-rolls/buns===>whole milk, confidence: 0.30790491984521834

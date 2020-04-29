@@ -1,8 +1,8 @@
 Find 7 rules !!!
-domestic eggs===>whole milk, confidence: 0.47275641025641024
 root vegetables, whole milk===>other vegetables, confidence: 0.47401247401247404
-other vegetables, tropical fruit===>whole milk, confidence: 0.47592067988668557
 other vegetables, root vegetables===>whole milk, confidence: 0.4892703862660944
+domestic eggs===>whole milk, confidence: 0.47275641025641024
+other vegetables, tropical fruit===>whole milk, confidence: 0.47592067988668557
 other vegetables, yogurt===>whole milk, confidence: 0.5128805620608899
-curd===>whole milk, confidence: 0.4904580152671756
 butter===>whole milk, confidence: 0.4972477064220184
+curd===>whole milk, confidence: 0.4904580152671756

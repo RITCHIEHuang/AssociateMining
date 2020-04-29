@@ -304,8 +304,8 @@ if __name__ == '__main__':
         n_freqs = []
         for min_sup in tqdm(min_sups):
             n_freq, t_freq, n_rules, t_rule_costs = run_single_alg(min_sup=min_sup, min_confs=min_confs, alg=alg,
-                                                                     dataset_func=read_grocery_data,
-                                                                     run_rule=record_rule_time_flag)
+                                                                   dataset_func=read_grocery_data,
+                                                                   run_rule=record_rule_time_flag)
             t_freqs.append(t_freq)
             n_freqs.append(n_freq)
 
@@ -328,16 +328,16 @@ if __name__ == '__main__':
     df_alg.to_csv("df_algorithm.csv")
     df_rule.to_csv("df_rule.csv")
 
-    sns.lineplot(x="min support", y="running time", hue='algorithm', data=df_alg)
-    sns.lineplot(x="min support", y="freq_set nums", data=df_alg)
+    # sns.lineplot(x="min support", y="running time", hue='algorithm', data=df_alg)
+    # sns.lineplot(x="min support", y="freq_set nums", data=df_alg)
 
-    g = sns.FacetGrid(df_rule, col="min support", col_wrap=5)
-    g.map(sns.lineplot, "min confidence", "rule nums")
+    # g = sns.FacetGrid(df_rule, col="min support", col_wrap=5)
+    # g.map(sns.lineplot, "min confidence", "rule nums")
 
-    sns.lineplot(x="min confidence", y="running time", hue="min support", data=df_rule)
-    sns.lineplot(x="min confidence", y="rule nums", hue="min support", data=df_rule)
+    # sns.lineplot(x="min confidence", y="running time", hue="min support", data=df_rule)
+    # sns.lineplot(x="min confidence", y="rule nums", hue="min support", data=df_rule)
 
-    plt.show()
+    # plt.show()
 
     # t_freq, t_rules = run_single_alg(min_sup=0.01, min_confs=(0.5,), alg='fp',
     #                                  dataset_func=read_grocery_data, run_rule=True)

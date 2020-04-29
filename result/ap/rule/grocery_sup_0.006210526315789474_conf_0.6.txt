@@ -1,8 +1,8 @@
 Find 7 rules !!!
+butter, yogurt===>whole milk, confidence: 0.6388888888888888
 butter, whipped/sour cream===>whole milk, confidence: 0.66
-other vegetables, tropical fruit, yogurt===>whole milk, confidence: 0.6198347107438017
 other vegetables, root vegetables, yogurt===>whole milk, confidence: 0.6062992125984252
 butter, root vegetables===>whole milk, confidence: 0.6377952755905512
-butter, yogurt===>whole milk, confidence: 0.6388888888888888
+other vegetables, tropical fruit, yogurt===>whole milk, confidence: 0.6198347107438017
 domestic eggs, tropical fruit===>whole milk, confidence: 0.6071428571428571
 curd, tropical fruit===>whole milk, confidence: 0.6336633663366337

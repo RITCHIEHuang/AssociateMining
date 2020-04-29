@@ -219,7 +219,7 @@ rolls/buns, root vegetables===>other vegetables, confidence: 0.502092050209205
 
  	   实验共进行了 20 组，这里只给出了 6 组，这里反映了在给定的 min support 下，随着 min confidence 的增大规则数量的减少。
 
-![image-20200429092353438](/Users/ritchiehuang/Library/Application Support/typora-user-images/image-20200429092353438.png)  
+![](https://tva1.sinaimg.cn/large/007S8ZIlgy1geadmsohhhj31ko0u0wi1.jpg)
 
 ### 4.2 UNIX_usage 数据集
 

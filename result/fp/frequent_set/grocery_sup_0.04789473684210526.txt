@@ -33,7 +33,7 @@ whole milk, support: 2513
 
 Including 4 2-item frequent set
 root vegetables, whole milk, support: 481
-yogurt, whole milk, support: 551
+whole milk, yogurt, support: 551
 whole milk, rolls/buns, support: 557
 other vegetables, whole milk, support: 736
 

@@ -1,5 +1,5 @@
 Find 4 rules !!!
-yogurt===>whole milk, confidence: 0.40160349854227406
 whole milk===>other vegetables, confidence: 0.29287703939514526
 rolls/buns===>whole milk, confidence: 0.30790491984521834
+yogurt===>whole milk, confidence: 0.40160349854227406
 other vegetables===>whole milk, confidence: 0.38675775091960063

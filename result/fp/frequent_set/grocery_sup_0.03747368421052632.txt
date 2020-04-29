@@ -37,13 +37,13 @@ other vegetables, support: 1903
 whole milk, support: 2513
 
 Including 10 2-item frequent set
-tropical fruit, whole milk, support: 416
+whole milk, tropical fruit, support: 416
 other vegetables, root vegetables, support: 466
 root vegetables, whole milk, support: 481
-yogurt, other vegetables, support: 427
-yogurt, whole milk, support: 551
-rolls/buns, soda, support: 377
-whole milk, soda, support: 394
+other vegetables, yogurt, support: 427
+whole milk, yogurt, support: 551
+soda, rolls/buns, support: 377
+soda, whole milk, support: 394
 other vegetables, rolls/buns, support: 419
 whole milk, rolls/buns, support: 557
 other vegetables, whole milk, support: 736

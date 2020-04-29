@@ -1,2 +1,0 @@
-Find 1 rules !!!
-other vegetables, yogurt===>whole milk, confidence: 0.5128805620608899

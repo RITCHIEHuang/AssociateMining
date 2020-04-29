@@ -1,4 +1,0 @@
-Find 3 rules !!!
-root vegetables, tropical fruit, yogurt===>whole milk, confidence: 0.7
-other vegetables, pip fruit, root vegetables===>whole milk, confidence: 0.675
-butter, whipped/sour cream===>whole milk, confidence: 0.66

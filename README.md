@@ -93,22 +93,6 @@ $$ confidence(A \Rightarrow B) = P(B | A) = \frac{sup\_count(A \cap B)}{sup\_cou
 {'whole milk'}
 ```
 
-​	   相应的数据处理代码如下:
-
-```python
-def read_grocery_data(dataset_path=None):
-    if dataset_path is None:
-        df = pd.read_csv(GROCERY_STORE_DATA_PATH, index_col=0)
-    else:
-        df = pd.read_csv(dataset_path, index_col=0)
-    db = pd.DataFrame()
-    db["items"] = df["items"].apply(lambda x: set(x[1:-1].split(",")))
-    items = reduce(lambda a, b: a | b, db.values)[0]
-    item_counts = len(items)
-
-    return db, items, item_counts
-```
-
 #### 3.1.2 UNIX_usage 数据集
 
 ​		数据集给出了 9 个文件夹和数据，同样地将所有数据文件合并至一个单独的`csv`文件中以方便之后的算法处理，处理后的数据格式如下:
